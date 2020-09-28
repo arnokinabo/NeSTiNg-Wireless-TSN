@@ -1,0 +1,10 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86_64
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/name=Local
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=linux
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:dhcp,org.eclipse.launchbar.core.descriptorType.default\:simulations,org.eclipse.launchbar.core.descriptorType.default\:examples - 02_example_gating,org.eclipse.launchbar.core.descriptorType.default\:examples - my_example_strict_priority,org.eclipse.launchbar.core.descriptorType.default\:examples - 03_example_frame_preemption,org.eclipse.launchbar.core.descriptorType.default\:examples - 01_example_strict_priority (1),org.eclipse.launchbar.core.descriptorType.default\:examples - 01_example_strict_priority (3),org.eclipse.launchbar.core.descriptorType.default\:examples - 01_example_strict_priority (4),org.eclipse.launchbar.core.descriptorType.default\:examples - tester,org.eclipse.launchbar.core.descriptorType.default\:examples - 01_example_strict_priority (2),org.eclipse.launchbar.core.descriptorType.default\:examples - 01_example_strict_priority
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:examples\ -\ 01_example_strict_priority\ (2)/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:examples\ -\ 01_example_strict_priority/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:examples\ -\ 01_example_strict_priority/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:examples\ -\ 03_example_frame_preemption/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:examples\ -\ 03_example_frame_preemption/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local

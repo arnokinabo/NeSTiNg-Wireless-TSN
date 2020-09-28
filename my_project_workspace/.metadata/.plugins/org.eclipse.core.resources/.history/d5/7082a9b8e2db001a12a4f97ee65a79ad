@@ -1,0 +1,144 @@
+[General]
+network = TestScenario
+
+record-eventlog = false 
+debug-on-errors = true
+result-dir = results_strict_priority
+sim-time-limit = 1s
+
+**.workstation*.ipv4.arp.typename = "GlobalArp" # extra wireless
+**.accessPoint*.ipv4.arp.typename = "GlobalArp" # extra wireless
+**.backupServer*.ipv4.arp.typename = "GlobalArp" # extra wireless
+**.roboticArm*.ipv4.arp.typename = "GlobalArp" # extra wireless
+
+# debug
+**.displayAddresses = true
+**.verbose = true
+
+# MAC Addresses
+**.robotController.eth.address = "00-00-00-00-00-01"
+**.workstation1.wlan[*].address = "00-00-00-00-00-02"
+**.workstation2.wlan[*].address = "00-00-00-00-00-03"
+**.roboticArm.wlan[*].address = "00-00-00-00-00-04"
+**.backupServer.wlan[*].address	= "00-00-00-00-00-05"
+
+# Extra definitions for the wireless portion:
+# access point configuration
+**.accessPoint1.wlan[0].address = "00-00-00-00-00-06"
+**.accessPoint2.wlan[0].address = "00-00-00-00-00-07"
+
+# workstations 1 and 2 are associated with AP1
+**.workstation*.wlan[0].mgmt.accessPointAddress = "00-00-00-00-00-06"
+
+# robotic arm and backup server are associated with AP2
+**.roboticArm.wlan[0].mgmt.accessPointAddress = "00-00-00-00-00-07"
+**.backupServer.wlan[0].mgmt.accessPointAddress = "00-00-00-00-00-07"
+
+# use simplified ieee802.11 management (no association, authentication etc.)
+**.workstation*.wlan[*].mgmt.typename = "Ieee80211MgmtStaSimplified"
+**.roboticArm.wlan[*].mgmt.typename = "Ieee80211MgmtStaSimplified"
+**.backupServer.wlan[*].mgmt.typename = "Ieee80211MgmtStaSimplified"
+**.accessPoint*.wlan[*].mgmt.typename = "Ieee80211MgmtApSimplified"
+
+# Switches
+**.switch*.processingDelay.delay = 5us
+**.filteringDatabase.database = xmldoc("xml/TestScenarioRouting.xml", "/filteringDatabases/")
+
+**.switchA.eth[3].queue.gateController.initialSchedule = xmldoc("xml/TestScenarioSchedule_AllOpen.xml", "/schedules/switch[@name='switchA']/port[@id='3']/schedule")
+**.switchB.eth[1].queue.gateController.initialSchedule = xmldoc("xml/TestScenarioSchedule_AllOpen.xml", "/schedules/switch[@name='switchB']/port[@id='1']/schedule")
+**.switch*.eth[*].queue.gateController.enableHoldAndRelease = false
+**.switch*.eth[*].queue.numberOfQueues = 8
+**.switch*.eth[*].queue.tsAlgorithms[0].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[1].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[2].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[3].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[4].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[5].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[6].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[7].typename = "StrictPriority"
+**.switch*.eth[*].queue.queues[0].expressQueue = true
+**.switch*.eth[*].queue.queues[1].expressQueue = true
+**.switch*.eth[*].queue.queues[2].expressQueue = true
+**.switch*.eth[*].queue.queues[3].expressQueue = true
+**.switch*.eth[*].queue.queues[4].expressQueue = true
+**.switch*.eth[*].queue.queues[5].expressQueue = true
+**.switch*.eth[*].queue.queues[6].expressQueue = true
+**.switch*.eth[*].queue.queues[7].expressQueue = true
+
+**.queues[*].bufferCapacity = 363360b
+
+**.switchA.eth[3].mac.enablePreemptingFrames = false
+
+# Schedule/Routing Swap
+#**.scheduleSwap.schedule = xmldoc("xml/TestScenarioScheduleSwap.xml")
+
+# Robot Controller
+**.robotController.trafGenSchedApp.initialSchedule = xmldoc("xml/TestScenarioSchedule_AllOpen.xml")
+
+# Workstations
+**.workstation*.trafGenApp.destPort = 5000 #extra
+**.accessPoint*.trafGenApp.localPort = 5000 #extra
+**.roboticArm.trafGenApp.localPort = 5000 #extra
+
+
+**.workstation*.numApps = 1 #extra
+#**.workstation*.trafGenApp.destAddress = "00-00-00-00-00-05"
+**.workstation*.trafGenApp.destAddresses = "backupServer"
+**.workstation*.trafGenApp.packetLength = 1500Byte-4Byte # MTU-Size - VLAN-Tag-Size
+**.workstation*.trafGenApp.sendInterval = 12us
+**.workstation*.trafGenApp.vlanTagEnabled = true
+**.workstation1.trafGenApp.pcp = 6
+**.workstation2.trafGenApp.pcp = 5
+
+# Robotic Arms
+**.roboticArm.trafGenApp.numPacketsPerBurst = 0
+**.roboticArm.trafGenApp.sendInterval = 1ms
+**.roboticArm.trafGenApp.packetLength = 100B
+
+# Backup Server
+**.backupServer.trafGenApp.numPacketsPerBurst = 0
+**.backupServer.trafGenApp.sendInterval = 1ms
+**.backupServer.trafGenApp.packetLength = 100B
+
+# Extra bits for the wireless portion:
+
+# Wireless Medium
+**.mgmt.frameCapacity = 10
+**.mgmt.numChannels = 2
+**.wlan[*].mac.retryLimit = 7
+**.wlan[*].mac.dcf.channelAccess.cwMin = 7
+**.wlan[*].mac.cwMinBroadcast = 31
+
+**.bandName = "5 GHz (20 MHz)"
+**.opMode = "ac"
+**.wlan[*].radio.antenna.numAntennas = 8 #maximum number of streams for 802.11ac is 8
+**.bitrate = 1Gbps
+
+#**.radioMedium.typename = "Ieee80211ScalarRadioMedium"
+#**.wlan[*].radio.typename = "UnitDiskRadio"
+
+**.wlan[*].radio.transmitter.power = 2mW
+**.wlan[*].radio.transmitter.headerBitLength = 100b
+**.carrierFrequency = 5GHz
+**.wlan[*].radio.receiver.sensitivity = -85dBm
+**.wlan[*].radio.receiver.snirThreshold = 4dB
+#**.wlan[*].radio.signalAnalogRepresentation = "dimensional"
+
+# Modelling interference and communication
+**.radioMedium.analogModel.ignorePartialInterference = true
+**.accessPoint*.wlan[*].radio.receiver.ignoreInterference = true
+**.workstation*.wlan[*].radio.receiver.ignoreInterference = true
+**.backupServer.wlan[*].radio.receiver.ignoreInterference = true
+**.roboticArm.wlan[*].radio.receiver.ignoreInterference = true
+#**.wlan[*].radio.transmitter.interferenceRange = 120m
+#**.wlan[*].radio.displayInterferenceRange = true
+**.wlan[*].radio.transmitter.communicationRange = 200m  # only for unit disk radio
+**.wlan[*].radio.displayCommunicationRange = true
+#**.wlan[0].mac.useAck = false #extra
+#**.wlan[0].mac.fullDuplex = false #extra
+
+
+# Visualisation definitions to support animations to show what's going on
+#**.visualizer.mediumVisualizer.displaySignals = true
+#**.visualizer.physicalLinkVisualizer.displayLinks = true
+**.visualizer.mediumVisualizer.packetFilter = "" #take care to deal with this line if need be

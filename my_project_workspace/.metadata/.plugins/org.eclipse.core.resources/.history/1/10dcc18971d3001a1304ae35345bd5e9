@@ -1,0 +1,129 @@
+[General]
+network = TestScenario
+
+record-eventlog = false 
+debug-on-errors = true
+result-dir = results_strict_priority
+sim-time-limit = 1s
+
+# debug
+**.displayAddresses = true
+**.verbose = true
+
+# Extra wireless definition:
+**.addDefaultRoutes = false
+
+# MAC Addresses
+**.robotController.eth.address = "00-00-00-00-00-01"
+**.workstation1.wlan.address = "00-00-00-00-00-02"
+**.workstation2.wlan.address = "00-00-00-00-00-03"
+**.roboticArm.wlan.address = "00-00-00-00-00-04"
+**.backupServer.wlan.address	= "00-00-00-00-00-05"
+
+# Extra definitions for the wireless portion:
+# **.accessPoint1.wlan[*].mac.address = "00-00-00-00-00-06"
+# **.workstation*.**.mgmt.accessPointAddress = "00-00-00-00-00-06"
+# **.accessPoint2.wlan[*].mac.address = "00:00:00:00:00:07"
+# **.roboticArm.**.mgmt.accessPointAddress = "00:00:00:00:00:07"
+# **.roboticArm.**.mgmt.assocAP = "00:00:00:00:00:07"
+# **.backupServer.**.mgmt.accessPointAddress = "00:00:00:00:00:07"
+
+# access point configuration
+**.accessPoint1.wlan[*].mac.address = "10-00-00-00-00-00"
+**.accessPoint1.wlan[*].radio.channelNumber = 0
+**.accessPoint2.wlan[*].mac.address = "002222222222"
+**.accessPoint2.wlan[*].radio.channelNumber = 1
+
+# workstations 1 and 2 are associated with AP1 on channel 0
+**.workstation*.**.mgmt.accessPointAddress = "10-00-00-00-00-00"
+**.workstation*.wlan[*].radio.channelNumber = 0
+
+# robotic arm and backup server are associated with AP2 on channel 1
+**.roboticArm.**.mgmt.accessPointAddress = "002222222222"
+**.roboticArm.wlan[*].radio.channelNumber = 1
+**.backupServer.**.mgmt.accessPointAddress = "002222222222"
+**.backupServer.wlan[*].radio.channelNumber = 1
+
+**.mgmt.frameCapacity = 10
+**.mgmt.numChannels = 2
+
+# use simplified ieee802.11 management (no association, authentication etc.)
+**.workstation*.wlan[*].mgmt.typename = "Ieee80211MgmtStaSimplified"
+**.roboticArm.wlan[*].mgmt.typename = "Ieee80211MgmtStaSimplified"
+**.backupServer.wlan[*].mgmt.typename = "Ieee80211MgmtStaSimplified"
+**.accessPoint*.mgmt.typename = "Ieee80211MgmtApSimplified"
+
+**.configurator.config = xmldoc("xml/network_switchedAp.xml")
+
+
+# Switches
+**.switch*.processingDelay.delay = 5us
+**.filteringDatabase.database = xmldoc("xml/TestScenarioRouting.xml", "/filteringDatabases/")
+
+**.switchA.eth[3].queue.gateController.initialSchedule = xmldoc("xml/TestScenarioSchedule_AllOpen.xml", "/schedules/switch[@name='switchA']/port[@id='3']/schedule")
+**.switchB.eth[0].queue.gateController.initialSchedule = xmldoc("xml/TestScenarioSchedule_AllOpen.xml", "/schedules/switch[@name='switchB']/port[@id='1']/schedule")
+**.switch*.eth[*].queue.gateController.enableHoldAndRelease = false
+**.switch*.eth[*].queue.numberOfQueues = 8
+**.switch*.eth[*].queue.tsAlgorithms[0].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[1].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[2].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[3].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[4].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[5].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[6].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[7].typename = "StrictPriority"
+**.switch*.eth[*].queue.queues[0].expressQueue = true
+**.switch*.eth[*].queue.queues[1].expressQueue = true
+**.switch*.eth[*].queue.queues[2].expressQueue = true
+**.switch*.eth[*].queue.queues[3].expressQueue = true
+**.switch*.eth[*].queue.queues[4].expressQueue = true
+**.switch*.eth[*].queue.queues[5].expressQueue = true
+**.switch*.eth[*].queue.queues[6].expressQueue = true
+**.switch*.eth[*].queue.queues[7].expressQueue = true
+
+**.queues[*].bufferCapacity = 363360b
+
+**.switchA.eth[3].mac.enablePreemptingFrames = false
+
+# Schedule/Routing Swap
+#**.scheduleSwap.schedule = xmldoc("xml/TestScenarioScheduleSwap.xml")
+
+# Robot Controller
+**.robotController.trafGenSchedApp.initialSchedule = xmldoc("xml/TestScenarioSchedule_AllOpen.xml")
+
+# Workstations
+**.workstation*.trafGenApp.destAddress = "00-00-00-00-00-05"
+**.workstation*.trafGenApp.packetLength = 1500Byte-4Byte # MTU-Size - VLAN-Tag-Size
+**.workstation*.trafGenApp.sendInterval = 12us
+**.workstation*.trafGenApp.vlanTagEnabled = true
+**.workstation1.trafGenApp.pcp = 6
+**.workstation2.trafGenApp.pcp = 5
+
+# Robotic Arms
+**.roboticArm.trafGenApp.numPacketsPerBurst = 0
+**.roboticArm.trafGenApp.sendInterval = 1ms
+**.roboticArm.trafGenApp.packetLength = 100B
+
+# Backup Server
+**.backupServer.trafGenApp.numPacketsPerBurst = 0
+**.backupServer.trafGenApp.sendInterval = 1ms
+**.backupServer.trafGenApp.packetLength = 100B
+
+# Extra bits for the wireless portion:
+
+# Wireless Medium
+**.wlan[*].mac.retryLimit = 7
+
+**.bandName = "5 GHz (20 MHz)"
+**.opMode = "ac"
+**.wlan[*].radio.antenna.numAntennas = 8 #maximum number of streams for 802.11ac is 8
+**.bitrate = 1Gbps
+
+**.wlan[*].radio.transmitter.power = 100mW
+**.wlan[*].radio.transmitter.headerBitLength = 100b
+**.carrierFrequency = 5GHz
+**.wlan[*].radio.receiver.sensitivity = -85dBm
+**.wlan[*].radio.receiver.snirThreshold = 4dB
+
+# Workstations
+# **.workstation*.wlan[*].radio.typename = "Ieee80211RadioMedium"

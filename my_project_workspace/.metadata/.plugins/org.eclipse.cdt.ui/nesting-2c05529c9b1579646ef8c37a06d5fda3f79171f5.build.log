@@ -1,0 +1,13 @@
+21:19:04 **** Incremental Build of configuration gcc-release for project nesting-2c05529c9b1579646ef8c37a06d5fda3f79171f5 ****
+make MODE=release -j1 all 
+cd src && make
+make[1]: Entering directory '/home/arno/omnetpp-5.4.1/my_project_workspace/nesting-2c05529c9b1579646ef8c37a06d5fda3f79171f5/src'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/arno/omnetpp-5.4.1/my_project_workspace/nesting-2c05529c9b1579646ef8c37a06d5fda3f79171f5/src'
+cd simulations && make
+make[1]: Entering directory '/home/arno/omnetpp-5.4.1/my_project_workspace/nesting-2c05529c9b1579646ef8c37a06d5fda3f79171f5/simulations'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/arno/omnetpp-5.4.1/my_project_workspace/nesting-2c05529c9b1579646ef8c37a06d5fda3f79171f5/simulations'
+
+21:19:05 Build Finished (took 1s.55ms)
+

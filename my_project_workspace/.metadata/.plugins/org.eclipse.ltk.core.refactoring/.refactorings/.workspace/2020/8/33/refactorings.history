@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;nesting2/simulations/examples/xml/network_switchedAp.xml&apos;" deleteContents="false" description="Delete resource &apos;nesting2/simulations/examples/xml/network_switchedAp.xml&apos;" element1="/nesting2/simulations/examples/xml/network_switchedAp.xml" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1597148483391"/>
+</session>
