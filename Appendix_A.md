@@ -28,8 +28,7 @@ Even though OMNeT provides a prompt for downloading the INET library upon its fi
 
 The install procedure was replicated to match the steps highlighted therein.
 
-
-#### Files
+### Files
 In the development phase, the main files used were as follows:
 
 -	`VlanEtherHostQ.ned`, whose file path is: `my_project_workspace/nesting2/src/nesting/node/ethernet/VlanEtherHostQ.ned`
@@ -42,7 +41,6 @@ Other files were created and used for testing purposes:
 Other main files reviewed which were required for understanding are:
 -	`02_example_gating.ini`, `03_example_frame_preemption.ini`, on the path: `my_project_workspace/nesting2/simulations/examples/`
 The system further produced results folders to hold the result files generated from the various tests and simulations. These folders are easily differentiated because they are named after the specific simulation they describe. They lie on the path: `my_project_workspace/nesting2/simulations/examples/<results_folder>`
-
 
 ### Errors in Development
 Upon building and running the programs developed in the simulator, there were more errors encountered:
