@@ -1,0 +1,246 @@
+version 2
+run General-0-20200807-22:56:32-6448
+attr configname General
+attr datetime 20200807-22:56:32
+attr experiment General
+attr inifile tester.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network Tester
+attr processid 6448
+attr repetition 0
+attr replication #0
+attr resultdir results
+attr runnumber 0
+attr seedset 0
+param *.accessPoint.numWlanInterfaces 2
+param **.accessPoint.wlan[0].address "\"00-00-00-00-00-06\""
+param **.accessPoint.wlan[1].address "\"00-00-00-00-00-07\""
+param **.host1.wlan[0].mgmt.accessPointAddress "\"00-00-00-00-00-06\""
+param **.host2.wlan[0].mgmt.accessPointAddress "\"00-00-00-00-00-07\""
+param **.mgmt.frameCapacity 10
+param **.mgmt.numChannels 2
+param **.host*.wlan[*].mgmt.typename "\"Ieee80211MgmtStaSimplified\""
+param **.accessPoint.wlan[*].mgmt.typename "\"Ieee80211MgmtApSimplified\""
+param **.accessPoint.wlan[*].radio.receiver.ignoreInterference true
+param **.host*.wlan[*].radio.receiver.ignoreInterference true
+param *.host1.numApps 1
+param *.host1.app[0].typename "\"PingApp\""
+param *.host1.app[0].destAddr "\"host2\""
+param *.host1.app[0].printPing true
+param **.numMediumVisualizers 4
+param **.displaySignals true
+param *.visualizer.mediumVisualizer[0].nodeFilter "\"host1\""
+param *.visualizer.mediumVisualizer[0].signalColor "\"red\""
+param *.visualizer.mediumVisualizer[1].nodeFilter "\"host2\""
+param *.visualizer.mediumVisualizer[1].signalColor "\"blue\""
+param *.visualizer.mediumVisualizer[2].nodeFilter "\"accessPoint\""
+param *.visualizer.mediumVisualizer[2].interfaceFilter "\"wlan[0]\""
+param *.visualizer.mediumVisualizer[2].signalColor "\"red\""
+param *.visualizer.mediumVisualizer[3].nodeFilter "\"accessPoint\""
+param *.visualizer.mediumVisualizer[3].interfaceFilter "\"wlan[1]\""
+param *.visualizer.mediumVisualizer[3].signalColor "\"blue\""
+param *.visualizer.numDataLinkVisualizers 2
+param *.visualizer.dataLinkVisualizer[*].displayLinks true
+param *.visualizer.dataLinkVisualizer[*].activityLevel "\"peer\""
+param *.visualizer.dataLinkVisualizer[0].nodeFilter "\"host1 or accessPoint\""
+param *.visualizer.dataLinkVisualizer[0].lineColor "\"red\""
+param *.visualizer.dataLinkVisualizer[0].labelColor "\"red\""
+param *.visualizer.dataLinkVisualizer[1].nodeFilter "\"accessPoint or host2\""
+param *.visualizer.dataLinkVisualizer[1].lineColor "\"darkblue\""
+param *.visualizer.dataLinkVisualizer[1].labelColor "\"darkblue\""
+param *.visualizer.interfaceTableVisualizer[0].displayInterfaceTables true
+param *.visualizer.interfaceTableVisualizer[0].placementHint "\"top\""
+param *.visualizer.ieee80211Visualizer[0].displayAssociations true
+param **.arp.typename "\"GlobalArp\""
+
+vector 0 Tester.host1.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 1 Tester.host1.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 2 Tester.host2.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 3 Tester.host2.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 4 Tester.accessPoint.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 5 Tester.accessPoint.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 6 Tester.accessPoint.wlan[1].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 7 Tester.accessPoint.wlan[1].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 8 Tester.host1.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 9 Tester.host1.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 10 Tester.host1.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 11 Tester.host1.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 12 Tester.host1.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 13 Tester.host1.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 14 Tester.host2.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 15 Tester.host2.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 16 Tester.host2.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 17 Tester.host2.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 18 Tester.host2.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 19 Tester.host2.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 20 Tester.accessPoint.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 21 Tester.accessPoint.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 22 Tester.accessPoint.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 23 Tester.accessPoint.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 24 Tester.accessPoint.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 25 Tester.accessPoint.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 26 Tester.accessPoint.wlan[1].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 27 Tester.accessPoint.wlan[1].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 28 Tester.accessPoint.wlan[1].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 29 Tester.accessPoint.wlan[1].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 30 Tester.accessPoint.wlan[1].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 31 Tester.accessPoint.wlan[1].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+0	0	0	0
+0	0	0	0
+0	0	0	2
+1	0	0	0
+2	0	0	0
+2	0	0	0
+2	0	0	2
+3	0	0	0
+4	0	0	0
+4	0	0	0
+4	0	0	2
+5	0	0	0
+6	0	0	0
+6	0	0	0
+6	0	0	2
+7	0	0	0
+8	0	0	1
+9	0	0	0
+9	0	0	0
+10	0	0	0
+10	0	0	0
+11	0	0	0
+11	0	0	0
+12	0	0	0
+12	0	0	0
+13	0	0	0
+13	0	0	0
+14	0	0	1
+15	0	0	0
+15	0	0	0
+16	0	0	0
+16	0	0	0
+17	0	0	0
+17	0	0	0
+18	0	0	0
+18	0	0	0
+19	0	0	0
+19	0	0	0
+20	0	0	1
+21	0	0	0
+21	0	0	0
+22	0	0	0
+22	0	0	0
+23	0	0	0
+23	0	0	0
+24	0	0	0
+24	0	0	0
+25	0	0	0
+25	0	0	0
+26	0	0	1
+27	0	0	0
+27	0	0	0
+28	0	0	0
+28	0	0	0
+29	0	0	0
+29	0	0	0
+30	0	0	0
+30	0	0	0
+31	0	0	0
+31	0	0	0
+

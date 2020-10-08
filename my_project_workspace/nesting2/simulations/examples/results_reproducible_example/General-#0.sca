@@ -1,0 +1,3542 @@
+version 2
+run General-0-20201001-13:02:48-13139
+attr configname General
+attr datetime 20201001-13:02:48
+attr experiment General
+attr inifile minimal_reproducible_example.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network reproducible_example
+attr processid 13139
+attr repetition 0
+attr replication #0
+attr resultdir results_reproducible_example
+attr runnumber 0
+attr seedset 0
+param **.displayAddresses true
+param **.verbose true
+param **.robotController.eth.address "\"00-00-00-00-00-01\""
+param **.roboticArm.wlan[*].address "\"00-00-00-00-00-04\""
+param **.accessPoint2.wlan[0].address "\"00-00-00-00-00-07\""
+param **.roboticArm.wlan[0].mgmt.accessPointAddress "\"00-00-00-00-00-07\""
+param **.roboticArm.wlan[*].mgmt.typename "\"Ieee80211MgmtStaSimplified\""
+param **.accessPoint*.wlan[*].mgmt.typename "\"Ieee80211MgmtApSimplified\""
+param **.switch*.processingDelay.delay 5us
+param **.filteringDatabase.database "xmldoc(\"xml/TestScenarioRouting.xml\", \"/filteringDatabases/\")"
+param **.switchA.eth[3].queue.gateController.initialSchedule "xmldoc(\"xml/TestScenarioSchedule_AllOpen.xml\", \"/schedules/switch[@name='switchA']/port[@id='3']/schedule\")"
+param **.switchB.eth[1].queue.gateController.initialSchedule "xmldoc(\"xml/TestScenarioSchedule_AllOpen.xml\", \"/schedules/switch[@name='switchB']/port[@id='1']/schedule\")"
+param **.switch*.eth[*].queue.gateController.enableHoldAndRelease false
+param **.switch*.eth[*].queue.numberOfQueues 8
+param **.switch*.eth[*].queue.tsAlgorithms[0].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[1].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[2].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[3].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[4].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[5].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[6].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[7].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.queues[0].expressQueue true
+param **.switch*.eth[*].queue.queues[1].expressQueue true
+param **.switch*.eth[*].queue.queues[2].expressQueue true
+param **.switch*.eth[*].queue.queues[3].expressQueue true
+param **.switch*.eth[*].queue.queues[4].expressQueue true
+param **.switch*.eth[*].queue.queues[5].expressQueue true
+param **.switch*.eth[*].queue.queues[6].expressQueue true
+param **.switch*.eth[*].queue.queues[7].expressQueue true
+param **.queues[*].bufferCapacity 363360b
+param **.switchA.eth[3].mac.enablePreemptingFrames false
+param **.robotController.trafGenSchedApp.initialSchedule "xmldoc(\"xml/TestScenarioSchedule_AllOpen.xml\")"
+param **.roboticArm.trafGenApp.numPacketsPerBurst 0
+param **.roboticArm.trafGenApp.sendInterval 1ms
+param **.roboticArm.trafGenApp.packetLength 100B
+param **.mgmt.frameCapacity 10
+param **.mgmt.numChannels 2
+param **.wlan[*].mac.retryLimit 7
+param **.wlan[*].mac.dcf.channelAccess.cwMin 7
+param **.wlan[*].mac.cwMinBroadcast 31
+param **.bandName "\"5 GHz (20 MHz)\""
+param **.opMode "\"ac\""
+param **.wlan[*].radio.antenna.numAntennas 8
+param **.bitrate 1Gbps
+param **.wlan[*].radio.transmitter.power 2mW
+param **.wlan[*].radio.transmitter.headerBitLength 100b
+param **.carrierFrequency 5GHz
+param **.wlan[*].radio.receiver.sensitivity -85dBm
+param **.wlan[*].radio.receiver.snirThreshold 4dB
+param **.radioMedium.analogModel.ignorePartialInterference true
+param **.accessPoint*.wlan[*].radio.receiver.ignoreInterference true
+param **.roboticArm.wlan[*].radio.receiver.ignoreInterference true
+param **.wlan[*].radio.transmitter.communicationRange 200m
+param **.wlan[*].radio.displayCommunicationRange true
+param **.visualizer.mediumVisualizer.packetFilter "\"\""
+
+scalar reproducible_example.switchA.eth[0].queue.queues[0] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[0].queue.queues[0] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[0].queue.queues[0] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[0].queue.queues[0] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[0].queue.queues[0] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[0].queue.queues[1] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[0].queue.queues[1] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[0].queue.queues[1] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[0].queue.queues[1] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[0].queue.queues[1] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[0].queue.queues[2] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[0].queue.queues[2] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[0].queue.queues[2] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[0].queue.queues[2] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[0].queue.queues[2] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[0].queue.queues[3] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[0].queue.queues[3] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[0].queue.queues[3] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[0].queue.queues[3] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[0].queue.queues[3] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[0].queue.queues[4] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[0].queue.queues[4] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[0].queue.queues[4] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[0].queue.queues[4] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[0].queue.queues[4] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[0].queue.queues[5] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[0].queue.queues[5] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[0].queue.queues[5] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[0].queue.queues[5] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[0].queue.queues[5] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[0].queue.queues[6] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[0].queue.queues[6] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[0].queue.queues[6] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[0].queue.queues[6] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[0].queue.queues[6] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[0].queue.queues[7] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[0].queue.queues[7] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[0].queue.queues[7] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[0].queue.queues[7] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[0].queue.queues[7] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[0].mac "simulated time" 0.001627258325
+scalar reproducible_example.switchA.eth[0].mac full-duplex 1
+scalar reproducible_example.switchA.eth[0].mac "frames/sec sent" 0
+scalar reproducible_example.switchA.eth[0].mac "frames/sec rcvd" 3072.6528930187
+scalar reproducible_example.switchA.eth[0].mac "bits/sec sent" 0
+scalar reproducible_example.switchA.eth[0].mac "bits/sec rcvd" 9242539.9022002
+scalar reproducible_example.switchA.eth[0].mac "rx channel idle (%)" 100
+scalar reproducible_example.switchA.eth[0].mac "rx channel utilization (%)" 0
+statistic reproducible_example.switchA.eth[0].mac pMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "pMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.switchA.eth[0].mac eMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "eMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[0].mac expressFramesEnqueued:count 0
+attr interpolationmode none
+attr source expressFrameEnqueuedWhileSendingPreemptableSignal
+attr title "express frames enqueued, count"
+scalar reproducible_example.switchA.eth[0].mac mPacketsFull:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFullSignal
+attr title "mpackets full, count"
+scalar reproducible_example.switchA.eth[0].mac mPacketsFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFinalSignal
+attr title "mPackets final, count"
+scalar reproducible_example.switchA.eth[0].mac mPacketsNonFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableNonFinalSignal
+attr title "mPackets non-final, count"
+scalar reproducible_example.switchA.eth[0].mac mPackets:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFramePartSignal
+attr title "mPackets, count"
+scalar reproducible_example.switchA.eth[0].mac preemptableFrames:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFrameSignal
+attr title "preemptableFrames, count"
+scalar reproducible_example.switchA.eth[0].mac expressFrames:count 0
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "expressFrames, count"
+scalar reproducible_example.switchA.eth[0].mac preemptions:count 0
+attr interpolationmode none
+attr source preemptCurrentFrameSignal
+attr title "preemptions, count"
+scalar reproducible_example.switchA.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar reproducible_example.switchA.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar reproducible_example.switchA.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar reproducible_example.switchA.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar reproducible_example.switchA.eth[0].mac rxPkOk:count 5
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar reproducible_example.switchA.eth[0].mac rxPkOk:sum(packetBytes) 1880
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[0].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar reproducible_example.switchA.eth[0].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar reproducible_example.switchA.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[0].mac passedUpPk:count 5
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.switchA.eth[0].mac passedUpPk:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.switchA.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar reproducible_example.switchA.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.switchA.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[0].qEncap packetDropped:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, count"
+scalar reproducible_example.switchA.eth[0].qEncap packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[1].queue.queues[0] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[1].queue.queues[0] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[1].queue.queues[0] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[1].queue.queues[0] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[1].queue.queues[0] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[1].queue.queues[1] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[1].queue.queues[1] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[1].queue.queues[1] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[1].queue.queues[1] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[1].queue.queues[1] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[1].queue.queues[2] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[1].queue.queues[2] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[1].queue.queues[2] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[1].queue.queues[2] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[1].queue.queues[2] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[1].queue.queues[3] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[1].queue.queues[3] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[1].queue.queues[3] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[1].queue.queues[3] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[1].queue.queues[3] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[1].queue.queues[4] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[1].queue.queues[4] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[1].queue.queues[4] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[1].queue.queues[4] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[1].queue.queues[4] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[1].queue.queues[5] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[1].queue.queues[5] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[1].queue.queues[5] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[1].queue.queues[5] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[1].queue.queues[5] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[1].queue.queues[6] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[1].queue.queues[6] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[1].queue.queues[6] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[1].queue.queues[6] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[1].queue.queues[6] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[1].queue.queues[7] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[1].queue.queues[7] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[1].queue.queues[7] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[1].queue.queues[7] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[1].queue.queues[7] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[1].mac "simulated time" 0.001627258325
+scalar reproducible_example.switchA.eth[1].mac full-duplex 1
+scalar reproducible_example.switchA.eth[1].mac "frames/sec sent" 0
+scalar reproducible_example.switchA.eth[1].mac "frames/sec rcvd" 0
+scalar reproducible_example.switchA.eth[1].mac "bits/sec sent" 0
+scalar reproducible_example.switchA.eth[1].mac "bits/sec rcvd" 0
+scalar reproducible_example.switchA.eth[1].mac "rx channel idle (%)" 100
+scalar reproducible_example.switchA.eth[1].mac "rx channel utilization (%)" 0
+statistic reproducible_example.switchA.eth[1].mac pMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "pMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.switchA.eth[1].mac eMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "eMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[1].mac expressFramesEnqueued:count 0
+attr interpolationmode none
+attr source expressFrameEnqueuedWhileSendingPreemptableSignal
+attr title "express frames enqueued, count"
+scalar reproducible_example.switchA.eth[1].mac mPacketsFull:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFullSignal
+attr title "mpackets full, count"
+scalar reproducible_example.switchA.eth[1].mac mPacketsFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFinalSignal
+attr title "mPackets final, count"
+scalar reproducible_example.switchA.eth[1].mac mPacketsNonFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableNonFinalSignal
+attr title "mPackets non-final, count"
+scalar reproducible_example.switchA.eth[1].mac mPackets:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFramePartSignal
+attr title "mPackets, count"
+scalar reproducible_example.switchA.eth[1].mac preemptableFrames:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFrameSignal
+attr title "preemptableFrames, count"
+scalar reproducible_example.switchA.eth[1].mac expressFrames:count 0
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "expressFrames, count"
+scalar reproducible_example.switchA.eth[1].mac preemptions:count 0
+attr interpolationmode none
+attr source preemptCurrentFrameSignal
+attr title "preemptions, count"
+scalar reproducible_example.switchA.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar reproducible_example.switchA.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar reproducible_example.switchA.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar reproducible_example.switchA.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar reproducible_example.switchA.eth[1].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar reproducible_example.switchA.eth[1].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[1].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar reproducible_example.switchA.eth[1].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[1].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar reproducible_example.switchA.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[1].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.switchA.eth[1].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.switchA.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar reproducible_example.switchA.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.switchA.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[1].qEncap packetDropped:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, count"
+scalar reproducible_example.switchA.eth[1].qEncap packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[2].queue.queues[0] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[2].queue.queues[0] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[2].queue.queues[0] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[2].queue.queues[0] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[2].queue.queues[0] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[2].queue.queues[1] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[2].queue.queues[1] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[2].queue.queues[1] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[2].queue.queues[1] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[2].queue.queues[1] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[2].queue.queues[2] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[2].queue.queues[2] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[2].queue.queues[2] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[2].queue.queues[2] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[2].queue.queues[2] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[2].queue.queues[3] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[2].queue.queues[3] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[2].queue.queues[3] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[2].queue.queues[3] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[2].queue.queues[3] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[2].queue.queues[4] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[2].queue.queues[4] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[2].queue.queues[4] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[2].queue.queues[4] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[2].queue.queues[4] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[2].queue.queues[5] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[2].queue.queues[5] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[2].queue.queues[5] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[2].queue.queues[5] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[2].queue.queues[5] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[2].queue.queues[6] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[2].queue.queues[6] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[2].queue.queues[6] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[2].queue.queues[6] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[2].queue.queues[6] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[2].queue.queues[7] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[2].queue.queues[7] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[2].queue.queues[7] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[2].queue.queues[7] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[2].queue.queues[7] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[2].mac "simulated time" 0.001627258325
+scalar reproducible_example.switchA.eth[2].mac full-duplex 1
+scalar reproducible_example.switchA.eth[2].mac "frames/sec sent" 0
+scalar reproducible_example.switchA.eth[2].mac "frames/sec rcvd" 0
+scalar reproducible_example.switchA.eth[2].mac "bits/sec sent" 0
+scalar reproducible_example.switchA.eth[2].mac "bits/sec rcvd" 0
+scalar reproducible_example.switchA.eth[2].mac "rx channel idle (%)" 100
+scalar reproducible_example.switchA.eth[2].mac "rx channel utilization (%)" 0
+statistic reproducible_example.switchA.eth[2].mac pMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "pMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.switchA.eth[2].mac eMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "eMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[2].mac expressFramesEnqueued:count 0
+attr interpolationmode none
+attr source expressFrameEnqueuedWhileSendingPreemptableSignal
+attr title "express frames enqueued, count"
+scalar reproducible_example.switchA.eth[2].mac mPacketsFull:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFullSignal
+attr title "mpackets full, count"
+scalar reproducible_example.switchA.eth[2].mac mPacketsFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFinalSignal
+attr title "mPackets final, count"
+scalar reproducible_example.switchA.eth[2].mac mPacketsNonFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableNonFinalSignal
+attr title "mPackets non-final, count"
+scalar reproducible_example.switchA.eth[2].mac mPackets:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFramePartSignal
+attr title "mPackets, count"
+scalar reproducible_example.switchA.eth[2].mac preemptableFrames:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFrameSignal
+attr title "preemptableFrames, count"
+scalar reproducible_example.switchA.eth[2].mac expressFrames:count 0
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "expressFrames, count"
+scalar reproducible_example.switchA.eth[2].mac preemptions:count 0
+attr interpolationmode none
+attr source preemptCurrentFrameSignal
+attr title "preemptions, count"
+scalar reproducible_example.switchA.eth[2].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar reproducible_example.switchA.eth[2].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar reproducible_example.switchA.eth[2].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar reproducible_example.switchA.eth[2].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar reproducible_example.switchA.eth[2].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar reproducible_example.switchA.eth[2].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[2].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar reproducible_example.switchA.eth[2].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[2].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar reproducible_example.switchA.eth[2].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[2].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.switchA.eth[2].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[2].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.switchA.eth[2].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[2].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar reproducible_example.switchA.eth[2].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[2].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.switchA.eth[2].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[2].qEncap packetDropped:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, count"
+scalar reproducible_example.switchA.eth[2].qEncap packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[3].queue.queues[0] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[3].queue.queues[0] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[3].queue.queues[0] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[3].queue.queues[0] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[3].queue.queues[0] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[3].queue.queues[1] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[3].queue.queues[1] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[3].queue.queues[1] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[3].queue.queues[1] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[3].queue.queues[1] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[3].queue.queues[2] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[3].queue.queues[2] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[3].queue.queues[2] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[3].queue.queues[2] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[3].queue.queues[2] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[3].queue.queues[3] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[3].queue.queues[3] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[3].queue.queues[3] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[3].queue.queues[3] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[3].queue.queues[3] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[3].queue.queues[4] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[3].queue.queues[4] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[3].queue.queues[4] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[3].queue.queues[4] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[3].queue.queues[4] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[3].queue.queues[5] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[3].queue.queues[5] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[3].queue.queues[5] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[3].queue.queues[5] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[3].queue.queues[5] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[3].queue.queues[6] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[3].queue.queues[6] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[3].queue.queues[6] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchA.eth[3].queue.queues[6] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[3].queue.queues[6] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[3].queue.queues[7] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchA.eth[3].queue.queues[7] rcvdPk:count 5
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchA.eth[3].queue.queues[7] queueingTime:histogram
+field count 5
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	5
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar reproducible_example.switchA.eth[3].queue.queues[7] queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchA.eth[3].queue.queues[7] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchA.eth[3].mac "simulated time" 0.001627258325
+scalar reproducible_example.switchA.eth[3].mac full-duplex 1
+scalar reproducible_example.switchA.eth[3].mac "frames/sec sent" 3072.6528930187
+scalar reproducible_example.switchA.eth[3].mac "frames/sec rcvd" 0
+scalar reproducible_example.switchA.eth[3].mac "bits/sec sent" 9242539.9022002
+scalar reproducible_example.switchA.eth[3].mac "bits/sec rcvd" 0
+scalar reproducible_example.switchA.eth[3].mac "rx channel idle (%)" 100
+scalar reproducible_example.switchA.eth[3].mac "rx channel utilization (%)" 0
+statistic reproducible_example.switchA.eth[3].mac pMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "pMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.switchA.eth[3].mac eMacDelay:histogram
+field count 5
+field mean 0.000818172
+field stddev 0.00063245553203368
+field min 1.8172e-05
+field max 0.001618172
+field sum 0.00409086
+field sqrsum 4.94702710792e-06
+attr interpolationmode none
+attr title "eMacDelay, histogram"
+bin	-inf	0
+bin	0	1
+bin	2e-05	0
+bin	4e-05	0
+bin	6e-05	0
+bin	8e-05	0
+bin	0.0001	0
+bin	0.00012	0
+bin	0.00014	0
+bin	0.00016	0
+bin	0.00018	0
+bin	0.0002	0
+bin	0.00022	0
+bin	0.00024	0
+bin	0.00026	0
+bin	0.00028	0
+bin	0.0003	0
+bin	0.00032	0
+bin	0.00034	0
+bin	0.00036	0
+bin	0.00038	0
+bin	0.0004	1
+bin	0.00042	0
+bin	0.00044	0
+bin	0.00046	0
+bin	0.00048	0
+bin	0.0005	0
+bin	0.00052	0
+bin	0.00054	0
+bin	0.00056	0
+bin	0.00058	0
+bin	0.0006	0
+bin	0.00062	0
+bin	0.00064	0
+bin	0.00066	0
+bin	0.00068	0
+bin	0.0007	0
+bin	0.00072	0
+bin	0.00074	0
+bin	0.00076	0
+bin	0.00078	0
+bin	0.0008	1
+bin	0.00082	0
+bin	0.00084	0
+bin	0.00086	0
+bin	0.00088	0
+bin	0.0009	0
+bin	0.00092	0
+bin	0.00094	0
+bin	0.00096	0
+bin	0.00098	0
+bin	0.001	0
+bin	0.00102	0
+bin	0.00104	0
+bin	0.00106	0
+bin	0.00108	0
+bin	0.0011	0
+bin	0.00112	0
+bin	0.00114	0
+bin	0.00116	0
+bin	0.00118	0
+bin	0.0012	1
+bin	0.00122	0
+bin	0.00124	0
+bin	0.00126	0
+bin	0.00128	0
+bin	0.0013	0
+bin	0.00132	0
+bin	0.00134	0
+bin	0.00136	0
+bin	0.00138	0
+bin	0.0014	0
+bin	0.00142	0
+bin	0.00144	0
+bin	0.00146	0
+bin	0.00148	0
+bin	0.0015	0
+bin	0.00152	0
+bin	0.00154	0
+bin	0.00156	0
+bin	0.00158	0
+bin	0.0016	1
+bin	0.00162	0
+bin	0.00164	0
+bin	0.00166	0
+bin	0.00168	0
+bin	0.0017	0
+bin	0.00172	0
+bin	0.00174	0
+bin	0.00176	0
+bin	0.00178	0
+bin	0.0018	0
+bin	0.00182	0
+bin	0.00184	0
+bin	0.00186	0
+bin	0.00188	0
+bin	0.0019	0
+bin	0.00192	0
+bin	0.00194	0
+bin	0.00196	0
+bin	0.00198	0
+bin	0.002	0
+bin	0.00202	0
+scalar reproducible_example.switchA.eth[3].mac expressFramesEnqueued:count 0
+attr interpolationmode none
+attr source expressFrameEnqueuedWhileSendingPreemptableSignal
+attr title "express frames enqueued, count"
+scalar reproducible_example.switchA.eth[3].mac mPacketsFull:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFullSignal
+attr title "mpackets full, count"
+scalar reproducible_example.switchA.eth[3].mac mPacketsFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFinalSignal
+attr title "mPackets final, count"
+scalar reproducible_example.switchA.eth[3].mac mPacketsNonFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableNonFinalSignal
+attr title "mPackets non-final, count"
+scalar reproducible_example.switchA.eth[3].mac mPackets:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFramePartSignal
+attr title "mPackets, count"
+scalar reproducible_example.switchA.eth[3].mac preemptableFrames:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFrameSignal
+attr title "preemptableFrames, count"
+scalar reproducible_example.switchA.eth[3].mac expressFrames:count 5
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "expressFrames, count"
+scalar reproducible_example.switchA.eth[3].mac preemptions:count 0
+attr interpolationmode none
+attr source preemptCurrentFrameSignal
+attr title "preemptions, count"
+scalar reproducible_example.switchA.eth[3].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar reproducible_example.switchA.eth[3].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar reproducible_example.switchA.eth[3].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar reproducible_example.switchA.eth[3].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar reproducible_example.switchA.eth[3].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar reproducible_example.switchA.eth[3].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[3].mac txPk:count 5
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar reproducible_example.switchA.eth[3].mac txPk:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[3].mac packetReceivedFromUpper:count 5
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar reproducible_example.switchA.eth[3].mac packetReceivedFromUpper:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[3].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.switchA.eth[3].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[3].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.switchA.eth[3].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[3].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar reproducible_example.switchA.eth[3].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[3].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.switchA.eth[3].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.switchA.eth[3].qEncap packetDropped:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, count"
+scalar reproducible_example.switchA.eth[3].qEncap packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, sum(packetBytes)"
+statistic reproducible_example.switchA.processingDelay delay:stats
+field count 5
+field mean 5e-06
+field stddev 0
+field min 5e-06
+field max 5e-06
+field sum 2.5e-05
+field sqrsum 1.25e-10
+attr interpolationmode none
+attr source delay
+attr title "packet delay, stats"
+scalar reproducible_example.switchA.processingDelay packetReceived:count 5
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar reproducible_example.switchA.processingDelay packetReceived:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar reproducible_example.switchA.processingDelay packetSent:count 5
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar reproducible_example.switchA.processingDelay packetSent:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[0].queue.queues[0] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[0].queue.queues[0] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[0].queue.queues[0] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[0].queue.queues[0] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[0].queue.queues[0] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[0].queue.queues[1] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[0].queue.queues[1] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[0].queue.queues[1] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[0].queue.queues[1] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[0].queue.queues[1] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[0].queue.queues[2] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[0].queue.queues[2] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[0].queue.queues[2] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[0].queue.queues[2] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[0].queue.queues[2] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[0].queue.queues[3] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[0].queue.queues[3] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[0].queue.queues[3] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[0].queue.queues[3] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[0].queue.queues[3] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[0].queue.queues[4] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[0].queue.queues[4] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[0].queue.queues[4] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[0].queue.queues[4] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[0].queue.queues[4] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[0].queue.queues[5] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[0].queue.queues[5] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[0].queue.queues[5] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[0].queue.queues[5] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[0].queue.queues[5] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[0].queue.queues[6] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[0].queue.queues[6] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[0].queue.queues[6] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[0].queue.queues[6] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[0].queue.queues[6] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[0].queue.queues[7] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[0].queue.queues[7] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[0].queue.queues[7] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[0].queue.queues[7] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[0].queue.queues[7] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[0].mac "simulated time" 0.001627258325
+scalar reproducible_example.switchB.eth[0].mac full-duplex 1
+scalar reproducible_example.switchB.eth[0].mac "frames/sec sent" 0
+scalar reproducible_example.switchB.eth[0].mac "frames/sec rcvd" 0
+scalar reproducible_example.switchB.eth[0].mac "bits/sec sent" 0
+scalar reproducible_example.switchB.eth[0].mac "bits/sec rcvd" 0
+scalar reproducible_example.switchB.eth[0].mac "rx channel idle (%)" 100
+scalar reproducible_example.switchB.eth[0].mac "rx channel utilization (%)" 0
+statistic reproducible_example.switchB.eth[0].mac pMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "pMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.switchB.eth[0].mac eMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "eMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[0].mac expressFramesEnqueued:count 0
+attr interpolationmode none
+attr source expressFrameEnqueuedWhileSendingPreemptableSignal
+attr title "express frames enqueued, count"
+scalar reproducible_example.switchB.eth[0].mac mPacketsFull:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFullSignal
+attr title "mpackets full, count"
+scalar reproducible_example.switchB.eth[0].mac mPacketsFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFinalSignal
+attr title "mPackets final, count"
+scalar reproducible_example.switchB.eth[0].mac mPacketsNonFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableNonFinalSignal
+attr title "mPackets non-final, count"
+scalar reproducible_example.switchB.eth[0].mac mPackets:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFramePartSignal
+attr title "mPackets, count"
+scalar reproducible_example.switchB.eth[0].mac preemptableFrames:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFrameSignal
+attr title "preemptableFrames, count"
+scalar reproducible_example.switchB.eth[0].mac expressFrames:count 0
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "expressFrames, count"
+scalar reproducible_example.switchB.eth[0].mac preemptions:count 0
+attr interpolationmode none
+attr source preemptCurrentFrameSignal
+attr title "preemptions, count"
+scalar reproducible_example.switchB.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar reproducible_example.switchB.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar reproducible_example.switchB.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar reproducible_example.switchB.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar reproducible_example.switchB.eth[0].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar reproducible_example.switchB.eth[0].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[0].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar reproducible_example.switchB.eth[0].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar reproducible_example.switchB.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.switchB.eth[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.switchB.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar reproducible_example.switchB.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.switchB.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[0].qEncap packetDropped:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, count"
+scalar reproducible_example.switchB.eth[0].qEncap packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[1].queue.queues[0] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[1].queue.queues[0] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[1].queue.queues[0] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[1].queue.queues[0] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[1].queue.queues[0] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[1].queue.queues[1] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[1].queue.queues[1] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[1].queue.queues[1] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[1].queue.queues[1] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[1].queue.queues[1] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[1].queue.queues[2] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[1].queue.queues[2] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[1].queue.queues[2] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[1].queue.queues[2] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[1].queue.queues[2] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[1].queue.queues[3] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[1].queue.queues[3] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[1].queue.queues[3] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[1].queue.queues[3] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[1].queue.queues[3] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[1].queue.queues[4] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[1].queue.queues[4] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[1].queue.queues[4] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[1].queue.queues[4] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[1].queue.queues[4] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[1].queue.queues[5] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[1].queue.queues[5] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[1].queue.queues[5] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[1].queue.queues[5] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[1].queue.queues[5] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[1].queue.queues[6] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[1].queue.queues[6] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[1].queue.queues[6] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[1].queue.queues[6] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[1].queue.queues[6] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[1].queue.queues[7] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[1].queue.queues[7] rcvdPk:count 5
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[1].queue.queues[7] queueingTime:histogram
+field count 5
+field mean 0
+field stddev 0
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	5
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar reproducible_example.switchB.eth[1].queue.queues[7] queueLength:max 1
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[1].queue.queues[7] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[1].mac "simulated time" 0.001627258325
+scalar reproducible_example.switchB.eth[1].mac full-duplex 1
+scalar reproducible_example.switchB.eth[1].mac "frames/sec sent" 2458.122314415
+scalar reproducible_example.switchB.eth[1].mac "frames/sec rcvd" 0
+scalar reproducible_example.switchB.eth[1].mac "bits/sec sent" 7394031.9217602
+scalar reproducible_example.switchB.eth[1].mac "bits/sec rcvd" 0
+scalar reproducible_example.switchB.eth[1].mac "rx channel idle (%)" 100
+scalar reproducible_example.switchB.eth[1].mac "rx channel utilization (%)" 0
+statistic reproducible_example.switchB.eth[1].mac pMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "pMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.switchB.eth[1].mac eMacDelay:histogram
+field count 5
+field mean 0.000826344
+field stddev 0.00063245553203368
+field min 2.6344e-05
+field max 0.001626344
+field sum 0.00413172
+field sqrsum 5.01422203168e-06
+attr interpolationmode none
+attr title "eMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	2e-05	1
+bin	4e-05	0
+bin	6e-05	0
+bin	8e-05	0
+bin	0.0001	0
+bin	0.00012	0
+bin	0.00014	0
+bin	0.00016	0
+bin	0.00018	0
+bin	0.0002	0
+bin	0.00022	0
+bin	0.00024	0
+bin	0.00026	0
+bin	0.00028	0
+bin	0.0003	0
+bin	0.00032	0
+bin	0.00034	0
+bin	0.00036	0
+bin	0.00038	0
+bin	0.0004	0
+bin	0.00042	1
+bin	0.00044	0
+bin	0.00046	0
+bin	0.00048	0
+bin	0.0005	0
+bin	0.00052	0
+bin	0.00054	0
+bin	0.00056	0
+bin	0.00058	0
+bin	0.0006	0
+bin	0.00062	0
+bin	0.00064	0
+bin	0.00066	0
+bin	0.00068	0
+bin	0.0007	0
+bin	0.00072	0
+bin	0.00074	0
+bin	0.00076	0
+bin	0.00078	0
+bin	0.0008	0
+bin	0.00082	1
+bin	0.00084	0
+bin	0.00086	0
+bin	0.00088	0
+bin	0.0009	0
+bin	0.00092	0
+bin	0.00094	0
+bin	0.00096	0
+bin	0.00098	0
+bin	0.001	0
+bin	0.00102	0
+bin	0.00104	0
+bin	0.00106	0
+bin	0.00108	0
+bin	0.0011	0
+bin	0.00112	0
+bin	0.00114	0
+bin	0.00116	0
+bin	0.00118	0
+bin	0.0012	0
+bin	0.00122	1
+bin	0.00124	0
+bin	0.00126	0
+bin	0.00128	0
+bin	0.0013	0
+bin	0.00132	0
+bin	0.00134	0
+bin	0.00136	0
+bin	0.00138	0
+bin	0.0014	0
+bin	0.00142	0
+bin	0.00144	0
+bin	0.00146	0
+bin	0.00148	0
+bin	0.0015	0
+bin	0.00152	0
+bin	0.00154	0
+bin	0.00156	0
+bin	0.00158	0
+bin	0.0016	0
+bin	0.00162	1
+bin	0.00164	0
+bin	0.00166	0
+bin	0.00168	0
+bin	0.0017	0
+bin	0.00172	0
+bin	0.00174	0
+bin	0.00176	0
+bin	0.00178	0
+bin	0.0018	0
+bin	0.00182	0
+bin	0.00184	0
+bin	0.00186	0
+bin	0.00188	0
+bin	0.0019	0
+bin	0.00192	0
+bin	0.00194	0
+bin	0.00196	0
+bin	0.00198	0
+bin	0.002	0
+bin	0.00202	0
+bin	0.00204	0
+scalar reproducible_example.switchB.eth[1].mac expressFramesEnqueued:count 0
+attr interpolationmode none
+attr source expressFrameEnqueuedWhileSendingPreemptableSignal
+attr title "express frames enqueued, count"
+scalar reproducible_example.switchB.eth[1].mac mPacketsFull:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFullSignal
+attr title "mpackets full, count"
+scalar reproducible_example.switchB.eth[1].mac mPacketsFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFinalSignal
+attr title "mPackets final, count"
+scalar reproducible_example.switchB.eth[1].mac mPacketsNonFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableNonFinalSignal
+attr title "mPackets non-final, count"
+scalar reproducible_example.switchB.eth[1].mac mPackets:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFramePartSignal
+attr title "mPackets, count"
+scalar reproducible_example.switchB.eth[1].mac preemptableFrames:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFrameSignal
+attr title "preemptableFrames, count"
+scalar reproducible_example.switchB.eth[1].mac expressFrames:count 4
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "expressFrames, count"
+scalar reproducible_example.switchB.eth[1].mac preemptions:count 0
+attr interpolationmode none
+attr source preemptCurrentFrameSignal
+attr title "preemptions, count"
+scalar reproducible_example.switchB.eth[1].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar reproducible_example.switchB.eth[1].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar reproducible_example.switchB.eth[1].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar reproducible_example.switchB.eth[1].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar reproducible_example.switchB.eth[1].mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar reproducible_example.switchB.eth[1].mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[1].mac txPk:count 4
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar reproducible_example.switchB.eth[1].mac txPk:sum(packetBytes) 1504
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[1].mac packetReceivedFromUpper:count 5
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar reproducible_example.switchB.eth[1].mac packetReceivedFromUpper:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[1].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.switchB.eth[1].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[1].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.switchB.eth[1].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[1].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar reproducible_example.switchB.eth[1].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[1].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.switchB.eth[1].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[1].qEncap packetDropped:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, count"
+scalar reproducible_example.switchB.eth[1].qEncap packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[2].queue.queues[0] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[2].queue.queues[0] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[2].queue.queues[0] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[2].queue.queues[0] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[2].queue.queues[0] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[2].queue.queues[1] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[2].queue.queues[1] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[2].queue.queues[1] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[2].queue.queues[1] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[2].queue.queues[1] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[2].queue.queues[2] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[2].queue.queues[2] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[2].queue.queues[2] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[2].queue.queues[2] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[2].queue.queues[2] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[2].queue.queues[3] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[2].queue.queues[3] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[2].queue.queues[3] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[2].queue.queues[3] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[2].queue.queues[3] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[2].queue.queues[4] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[2].queue.queues[4] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[2].queue.queues[4] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[2].queue.queues[4] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[2].queue.queues[4] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[2].queue.queues[5] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[2].queue.queues[5] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[2].queue.queues[5] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[2].queue.queues[5] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[2].queue.queues[5] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[2].queue.queues[6] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[2].queue.queues[6] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[2].queue.queues[6] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[2].queue.queues[6] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[2].queue.queues[6] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[2].queue.queues[7] dropPk:count 0
+attr interpolationmode none
+attr source dropPkByQueue
+attr title "dropped packets, count"
+scalar reproducible_example.switchB.eth[2].queue.queues[7] rcvdPk:count 0
+attr interpolationmode none
+attr title "received packets, count"
+statistic reproducible_example.switchB.eth[2].queue.queues[7] queueingTime:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "queueing time, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[2].queue.queues[7] queueLength:max 0
+attr interpolationmode sample-hold
+attr title "queue length, max"
+scalar reproducible_example.switchB.eth[2].queue.queues[7] queueLength:timeavg 0
+attr interpolationmode sample-hold
+attr title "queue length, timeavg"
+scalar reproducible_example.switchB.eth[2].mac "simulated time" 0.001627258325
+scalar reproducible_example.switchB.eth[2].mac full-duplex 1
+scalar reproducible_example.switchB.eth[2].mac "frames/sec sent" 0
+scalar reproducible_example.switchB.eth[2].mac "frames/sec rcvd" 3072.6528930187
+scalar reproducible_example.switchB.eth[2].mac "bits/sec sent" 0
+scalar reproducible_example.switchB.eth[2].mac "bits/sec rcvd" 9242539.9022002
+scalar reproducible_example.switchB.eth[2].mac "rx channel idle (%)" 100
+scalar reproducible_example.switchB.eth[2].mac "rx channel utilization (%)" 0
+statistic reproducible_example.switchB.eth[2].mac pMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "pMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.switchB.eth[2].mac eMacDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr title "eMacDelay, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.switchB.eth[2].mac expressFramesEnqueued:count 0
+attr interpolationmode none
+attr source expressFrameEnqueuedWhileSendingPreemptableSignal
+attr title "express frames enqueued, count"
+scalar reproducible_example.switchB.eth[2].mac mPacketsFull:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFullSignal
+attr title "mpackets full, count"
+scalar reproducible_example.switchB.eth[2].mac mPacketsFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFinalSignal
+attr title "mPackets final, count"
+scalar reproducible_example.switchB.eth[2].mac mPacketsNonFinal:count 0
+attr interpolationmode none
+attr source transmittedPreemptableNonFinalSignal
+attr title "mPackets non-final, count"
+scalar reproducible_example.switchB.eth[2].mac mPackets:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFramePartSignal
+attr title "mPackets, count"
+scalar reproducible_example.switchB.eth[2].mac preemptableFrames:count 0
+attr interpolationmode none
+attr source transmittedPreemptableFrameSignal
+attr title "preemptableFrames, count"
+scalar reproducible_example.switchB.eth[2].mac expressFrames:count 0
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "expressFrames, count"
+scalar reproducible_example.switchB.eth[2].mac preemptions:count 0
+attr interpolationmode none
+attr source preemptCurrentFrameSignal
+attr title "preemptions, count"
+scalar reproducible_example.switchB.eth[2].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar reproducible_example.switchB.eth[2].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar reproducible_example.switchB.eth[2].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar reproducible_example.switchB.eth[2].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar reproducible_example.switchB.eth[2].mac rxPkOk:count 5
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar reproducible_example.switchB.eth[2].mac rxPkOk:sum(packetBytes) 1880
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[2].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar reproducible_example.switchB.eth[2].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[2].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar reproducible_example.switchB.eth[2].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[2].mac passedUpPk:count 5
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.switchB.eth[2].mac passedUpPk:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[2].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.switchB.eth[2].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[2].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar reproducible_example.switchB.eth[2].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[2].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.switchB.eth[2].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.switchB.eth[2].qEncap packetDropped:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, count"
+scalar reproducible_example.switchB.eth[2].qEncap packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, sum(packetBytes)"
+statistic reproducible_example.switchB.processingDelay delay:stats
+field count 5
+field mean 5e-06
+field stddev 0
+field min 5e-06
+field max 5e-06
+field sum 2.5e-05
+field sqrsum 1.25e-10
+attr interpolationmode none
+attr source delay
+attr title "packet delay, stats"
+scalar reproducible_example.switchB.processingDelay packetReceived:count 5
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar reproducible_example.switchB.processingDelay packetReceived:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+scalar reproducible_example.switchB.processingDelay packetSent:count 5
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar reproducible_example.switchB.processingDelay packetSent:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.relayUnit "number of received BPDUs from STP module" 0
+scalar reproducible_example.accessPoint2.relayUnit "number of received frames from network (including BPDUs)" 4
+scalar reproducible_example.accessPoint2.relayUnit "number of dropped frames (including BPDUs)" 0
+scalar reproducible_example.accessPoint2.relayUnit "number of delivered BPDUs to the STP module" 0
+scalar reproducible_example.accessPoint2.relayUnit "number of dispatched BPDU frames to the network" 0
+scalar reproducible_example.accessPoint2.relayUnit "number of dispatched non-BDPU frames to the network" 4
+scalar reproducible_example.accessPoint2.wlan[0].mac rcvdPkFromLl:count 0
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar reproducible_example.accessPoint2.wlan[0].mac rcvdPkFromLl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.wlan[0].mac sentDownPk:count 4
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar reproducible_example.accessPoint2.wlan[0].mac sentDownPk:sum(packetBytes) 1560
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.wlan[0].mac rcvdPkFromHl:count 4
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar reproducible_example.accessPoint2.wlan[0].mac rcvdPkFromHl:sum(packetBytes) 1448
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.wlan[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.accessPoint2.wlan[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.accessPoint2.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.accessPoint2.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar reproducible_example.accessPoint2.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar reproducible_example.accessPoint2.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+statistic reproducible_example.accessPoint2.wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar reproducible_example.accessPoint2.wlan[0].radio radioMode:count 11
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar reproducible_example.accessPoint2.wlan[0].radio receptionState:count 9
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar reproducible_example.accessPoint2.wlan[0].radio transmissionState:count 16
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic reproducible_example.accessPoint2.wlan[0].radio minSnir:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.accessPoint2.wlan[0].radio packetErrorRate:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.accessPoint2.wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.accessPoint2.wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.accessPoint2.eth[0].mac "simulated time" 0.001627258325
+scalar reproducible_example.accessPoint2.eth[0].mac full-duplex 1
+scalar reproducible_example.accessPoint2.eth[0].mac "frames/sec sent" 0
+scalar reproducible_example.accessPoint2.eth[0].mac "frames/sec rcvd" 2458.122314415
+scalar reproducible_example.accessPoint2.eth[0].mac "bits/sec sent" 0
+scalar reproducible_example.accessPoint2.eth[0].mac "bits/sec rcvd" 7394031.9217602
+scalar reproducible_example.accessPoint2.eth[0].mac "rx channel idle (%)" 100
+scalar reproducible_example.accessPoint2.eth[0].mac "rx channel utilization (%)" 0
+scalar reproducible_example.accessPoint2.eth[0].mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar reproducible_example.accessPoint2.eth[0].mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar reproducible_example.accessPoint2.eth[0].mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar reproducible_example.accessPoint2.eth[0].mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar reproducible_example.accessPoint2.eth[0].mac rxPkOk:count 4
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar reproducible_example.accessPoint2.eth[0].mac rxPkOk:sum(packetBytes) 1504
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.eth[0].mac txPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar reproducible_example.accessPoint2.eth[0].mac txPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.eth[0].mac packetReceivedFromUpper:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar reproducible_example.accessPoint2.eth[0].mac packetReceivedFromUpper:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.eth[0].mac passedUpPk:count 4
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.accessPoint2.eth[0].mac passedUpPk:sum(packetBytes) 1504
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.eth[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.accessPoint2.eth[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.eth[0].mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar reproducible_example.accessPoint2.eth[0].mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar reproducible_example.accessPoint2.eth[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.accessPoint2.eth[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.radioMedium.propagation "Arrival computation count" 4
+scalar reproducible_example.radioMedium "transmission count" 4
+scalar reproducible_example.radioMedium "signal send count" 4
+scalar reproducible_example.radioMedium "reception computation count" 4
+scalar reproducible_example.radioMedium "interference computation count" 18
+scalar reproducible_example.radioMedium "reception decision computation count" 0
+scalar reproducible_example.radioMedium "listening decision computation count" 14
+scalar reproducible_example.radioMedium "reception cache hit" 75
+attr unit %
+scalar reproducible_example.radioMedium "interference cache hit" -nan
+attr unit %
+scalar reproducible_example.radioMedium "noise cache hit" -nan
+attr unit %
+scalar reproducible_example.radioMedium "snir cache hit" -nan
+attr unit %
+scalar reproducible_example.radioMedium "reception decision cache hit" -nan
+attr unit %
+scalar reproducible_example.radioMedium "reception result cache hit" -nan
+attr unit %
+scalar reproducible_example.robotController.trafGenSchedApp pktSent:count 5
+attr interpolationmode none
+attr source sentPk
+attr title "num packets sent, count"
+scalar reproducible_example.robotController.trafGenSchedApp pktRcvd:count 0
+attr interpolationmode none
+attr source rcvdPk
+attr title "num packets received, count"
+statistic reproducible_example.robotController.trafGenSchedApp pktRcvdDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source dataAge(rcvdPk)
+attr title "end to end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.robotController.trafGenSchedApp pktRcvdDelay:min nan
+attr interpolationmode none
+attr source dataAge(rcvdPk)
+attr title "end to end delay, min"
+attr unit s
+scalar reproducible_example.robotController.trafGenSchedApp pktRcvdDelay:max nan
+attr interpolationmode none
+attr source dataAge(rcvdPk)
+attr title "end to end delay, max"
+attr unit s
+scalar reproducible_example.robotController.eth.mac "simulated time" 0.001627258325
+scalar reproducible_example.robotController.eth.mac full-duplex 1
+scalar reproducible_example.robotController.eth.mac "frames/sec sent" 3072.6528930187
+scalar reproducible_example.robotController.eth.mac "frames/sec rcvd" 0
+scalar reproducible_example.robotController.eth.mac "bits/sec sent" 9242539.9022002
+scalar reproducible_example.robotController.eth.mac "bits/sec rcvd" 0
+scalar reproducible_example.robotController.eth.mac "rx channel idle (%)" 100
+scalar reproducible_example.robotController.eth.mac "rx channel utilization (%)" 0
+scalar reproducible_example.robotController.eth.mac rxPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units received, count"
+scalar reproducible_example.robotController.eth.mac rxPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units received, sum"
+scalar reproducible_example.robotController.eth.mac txPausePkUnits:count 0
+attr interpolationmode none
+attr title "pause units sent, count"
+scalar reproducible_example.robotController.eth.mac txPausePkUnits:sum 0
+attr interpolationmode none
+attr title "pause units sent, sum"
+scalar reproducible_example.robotController.eth.mac rxPkOk:count 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, count"
+scalar reproducible_example.robotController.eth.mac rxPkOk:sum(packetBytes) 0
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, sum(packetBytes)"
+scalar reproducible_example.robotController.eth.mac txPk:count 5
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, count"
+scalar reproducible_example.robotController.eth.mac txPk:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, sum(packetBytes)"
+scalar reproducible_example.robotController.eth.mac packetReceivedFromUpper:count 5
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, count"
+scalar reproducible_example.robotController.eth.mac packetReceivedFromUpper:sum(packetBytes) 1880
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, sum(packetBytes)"
+scalar reproducible_example.robotController.eth.mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.robotController.eth.mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.robotController.eth.mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.robotController.eth.mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.robotController.eth.mac packetDropInterfaceDown:count 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, count"
+scalar reproducible_example.robotController.eth.mac packetDropInterfaceDown:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsInterfaceDown(packetDropped)
+attr title "packet drop: interface down, sum(packetBytes)"
+scalar reproducible_example.robotController.eth.mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.robotController.eth.mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.robotController.eth.encap pauseSent:count 0
+attr title "pause sent, count"
+scalar reproducible_example.robotController.eth.encap pauseSent:sum 0
+attr title "pause sent, sum"
+scalar reproducible_example.robotController.eth.encap decapPk:count 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, count"
+scalar reproducible_example.robotController.eth.encap decapPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source decapPk
+attr title "packets decapsulated, sum(packetBytes)"
+scalar reproducible_example.robotController.eth.encap encapPk:count 5
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, count"
+scalar reproducible_example.robotController.eth.encap encapPk:sum(packetBytes) 1770
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, sum(packetBytes)"
+scalar reproducible_example.robotController.eth.qEncap packetDropped:count 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, count"
+scalar reproducible_example.robotController.eth.qEncap packetDropped:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropped
+attr title "packet dropped, sum(packetBytes)"
+scalar reproducible_example.roboticArm.trafGenApp packetReceived:count 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, count"
+scalar reproducible_example.roboticArm.trafGenApp packetReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, sum(packetBytes)"
+statistic reproducible_example.roboticArm.trafGenApp endToEndDelay:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr interpolationmode none
+attr source dataAge(packetReceived)
+attr title "end-to-end delay, histogram"
+attr unit s
+bin	-inf	0
+bin	0	0
+bin	1	0
+scalar reproducible_example.roboticArm.trafGenApp packetSent:count 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, count"
+scalar reproducible_example.roboticArm.trafGenApp packetSent:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, sum(packetBytes)"
+scalar reproducible_example.roboticArm.wlan[0].agent dropConfirm:count 0
+attr title "dropped confirms, count"
+scalar reproducible_example.roboticArm.wlan[0].agent acceptConfirm:count 0
+attr title "accepted confirms, count"
+scalar reproducible_example.roboticArm.wlan[0].agent sentRequest:count 0
+attr title "sent requests, count"
+scalar reproducible_example.roboticArm.wlan[0].mac rcvdPkFromLl:count 0
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, count"
+scalar reproducible_example.roboticArm.wlan[0].mac rcvdPkFromLl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromLower
+attr title "packets received from lower layer, sum(packetBytes)"
+scalar reproducible_example.roboticArm.wlan[0].mac sentDownPk:count 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, count"
+scalar reproducible_example.roboticArm.wlan[0].mac sentDownPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, sum(packetBytes)"
+scalar reproducible_example.roboticArm.wlan[0].mac rcvdPkFromHl:count 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, count"
+scalar reproducible_example.roboticArm.wlan[0].mac rcvdPkFromHl:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, sum(packetBytes)"
+scalar reproducible_example.roboticArm.wlan[0].mac passedUpPk:count 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, count"
+scalar reproducible_example.roboticArm.wlan[0].mac passedUpPk:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, sum(packetBytes)"
+scalar reproducible_example.roboticArm.wlan[0].mac packetDropIncorrectlyReceived:count 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, count"
+scalar reproducible_example.roboticArm.wlan[0].mac packetDropIncorrectlyReceived:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsIncorrectlyReceived(packetDropped)
+attr title "packet drop: incorrectly received, sum(packetBytes)"
+scalar reproducible_example.roboticArm.wlan[0].mac packetDropNotAddressedToUs:count 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, count"
+scalar reproducible_example.roboticArm.wlan[0].mac packetDropNotAddressedToUs:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsNotAddressedToUs(packetDropped)
+attr title "packet drop: not addressed to us, sum(packetBytes)"
+scalar reproducible_example.roboticArm.wlan[0].mac packetDropQueueOverflow:count 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, count"
+scalar reproducible_example.roboticArm.wlan[0].mac packetDropQueueOverflow:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsQueueOverflow(packetDropped)
+attr title "packet drop: queue overflow, sum(packetBytes)"
+scalar reproducible_example.roboticArm.wlan[0].mac packetDropRetryLimitReached:count 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, count"
+scalar reproducible_example.roboticArm.wlan[0].mac packetDropRetryLimitReached:sum(packetBytes) 0
+attr interpolationmode none
+attr source packetDropReasonIsRetryLimitReached(packetDropped)
+attr title "packet drop: retry limit reached, sum(packetBytes)"
+scalar reproducible_example.roboticArm.wlan[0].mac linkBroken:count 0
+attr interpolationmode none
+attr source linkBroken
+attr title "link break, count"
+statistic reproducible_example.roboticArm.wlan[0].radio radioChannel:histogram
+field count 1
+field mean 0
+field stddev -nan
+field min 0
+field max 0
+field sum 0
+field sqrsum 0
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, histogram"
+bin	-inf	0
+bin	-0.5	0
+bin	-0.48	0
+bin	-0.46	0
+bin	-0.44	0
+bin	-0.42	0
+bin	-0.4	0
+bin	-0.38	0
+bin	-0.36	0
+bin	-0.34	0
+bin	-0.32	0
+bin	-0.3	0
+bin	-0.28	0
+bin	-0.26	0
+bin	-0.24	0
+bin	-0.22	0
+bin	-0.2	0
+bin	-0.18	0
+bin	-0.16	0
+bin	-0.14	0
+bin	-0.12	0
+bin	-0.1	0
+bin	-0.08	0
+bin	-0.06	0
+bin	-0.04	0
+bin	-0.02	0
+bin	0	1
+bin	0.02	0
+bin	0.04	0
+bin	0.06	0
+bin	0.08	0
+bin	0.1	0
+bin	0.12	0
+bin	0.14	0
+bin	0.16	0
+bin	0.18	0
+bin	0.2	0
+bin	0.22	0
+bin	0.24	0
+bin	0.26	0
+bin	0.28	0
+bin	0.3	0
+bin	0.32	0
+bin	0.34	0
+bin	0.36	0
+bin	0.38	0
+bin	0.4	0
+bin	0.42	0
+bin	0.44	0
+bin	0.46	0
+bin	0.48	0
+bin	0.5	0
+scalar reproducible_example.roboticArm.wlan[0].radio radioMode:count 3
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, count"
+scalar reproducible_example.roboticArm.wlan[0].radio receptionState:count 1
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, count"
+scalar reproducible_example.roboticArm.wlan[0].radio transmissionState:count 0
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, count"
+statistic reproducible_example.roboticArm.wlan[0].radio minSnir:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source minimumSnir(packetSentToUpper)
+attr title "Min SNIR, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.roboticArm.wlan[0].radio packetErrorRate:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source packetErrorRate(packetSentToUpper)
+attr title "Packet error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.roboticArm.wlan[0].radio bitErrorRate:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source bitErrorRate(packetSentToUpper)
+attr title "Bit error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+statistic reproducible_example.roboticArm.wlan[0].radio symbolErrorRate:histogram
+field count 0
+field mean -nan
+field stddev nan
+field min nan
+field max nan
+field sum 0
+field sqrsum 0
+attr source symbolErrorRate(packetSentToUpper)
+attr title "Symbol error rate, histogram"
+bin	-inf	0
+bin	0	0
+bin	1	0
+

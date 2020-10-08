@@ -1,0 +1,884 @@
+version 2
+run General-0-20201001-13:02:48-13139
+attr configname General
+attr datetime 20201001-13:02:48
+attr experiment General
+attr inifile minimal_reproducible_example.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network reproducible_example
+attr processid 13139
+attr repetition 0
+attr replication #0
+attr resultdir results_reproducible_example
+attr runnumber 0
+attr seedset 0
+param **.displayAddresses true
+param **.verbose true
+param **.robotController.eth.address "\"00-00-00-00-00-01\""
+param **.roboticArm.wlan[*].address "\"00-00-00-00-00-04\""
+param **.accessPoint2.wlan[0].address "\"00-00-00-00-00-07\""
+param **.roboticArm.wlan[0].mgmt.accessPointAddress "\"00-00-00-00-00-07\""
+param **.roboticArm.wlan[*].mgmt.typename "\"Ieee80211MgmtStaSimplified\""
+param **.accessPoint*.wlan[*].mgmt.typename "\"Ieee80211MgmtApSimplified\""
+param **.switch*.processingDelay.delay 5us
+param **.filteringDatabase.database "xmldoc(\"xml/TestScenarioRouting.xml\", \"/filteringDatabases/\")"
+param **.switchA.eth[3].queue.gateController.initialSchedule "xmldoc(\"xml/TestScenarioSchedule_AllOpen.xml\", \"/schedules/switch[@name='switchA']/port[@id='3']/schedule\")"
+param **.switchB.eth[1].queue.gateController.initialSchedule "xmldoc(\"xml/TestScenarioSchedule_AllOpen.xml\", \"/schedules/switch[@name='switchB']/port[@id='1']/schedule\")"
+param **.switch*.eth[*].queue.gateController.enableHoldAndRelease false
+param **.switch*.eth[*].queue.numberOfQueues 8
+param **.switch*.eth[*].queue.tsAlgorithms[0].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[1].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[2].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[3].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[4].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[5].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[6].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.tsAlgorithms[7].typename "\"StrictPriority\""
+param **.switch*.eth[*].queue.queues[0].expressQueue true
+param **.switch*.eth[*].queue.queues[1].expressQueue true
+param **.switch*.eth[*].queue.queues[2].expressQueue true
+param **.switch*.eth[*].queue.queues[3].expressQueue true
+param **.switch*.eth[*].queue.queues[4].expressQueue true
+param **.switch*.eth[*].queue.queues[5].expressQueue true
+param **.switch*.eth[*].queue.queues[6].expressQueue true
+param **.switch*.eth[*].queue.queues[7].expressQueue true
+param **.queues[*].bufferCapacity 363360b
+param **.switchA.eth[3].mac.enablePreemptingFrames false
+param **.robotController.trafGenSchedApp.initialSchedule "xmldoc(\"xml/TestScenarioSchedule_AllOpen.xml\")"
+param **.roboticArm.trafGenApp.numPacketsPerBurst 0
+param **.roboticArm.trafGenApp.sendInterval 1ms
+param **.roboticArm.trafGenApp.packetLength 100B
+param **.mgmt.frameCapacity 10
+param **.mgmt.numChannels 2
+param **.wlan[*].mac.retryLimit 7
+param **.wlan[*].mac.dcf.channelAccess.cwMin 7
+param **.wlan[*].mac.cwMinBroadcast 31
+param **.bandName "\"5 GHz (20 MHz)\""
+param **.opMode "\"ac\""
+param **.wlan[*].radio.antenna.numAntennas 8
+param **.bitrate 1Gbps
+param **.wlan[*].radio.transmitter.power 2mW
+param **.wlan[*].radio.transmitter.headerBitLength 100b
+param **.carrierFrequency 5GHz
+param **.wlan[*].radio.receiver.sensitivity -85dBm
+param **.wlan[*].radio.receiver.snirThreshold 4dB
+param **.radioMedium.analogModel.ignorePartialInterference true
+param **.accessPoint*.wlan[*].radio.receiver.ignoreInterference true
+param **.roboticArm.wlan[*].radio.receiver.ignoreInterference true
+param **.wlan[*].radio.transmitter.communicationRange 200m
+param **.wlan[*].radio.displayCommunicationRange true
+param **.visualizer.mediumVisualizer.packetFilter "\"\""
+
+vector 0 reproducible_example.switchA.eth[0].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 1 reproducible_example.switchA.eth[0].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 2 reproducible_example.switchA.eth[0].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 3 reproducible_example.switchA.eth[0].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 4 reproducible_example.switchA.eth[0].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 5 reproducible_example.switchA.eth[0].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 6 reproducible_example.switchA.eth[0].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 7 reproducible_example.switchA.eth[0].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 8 reproducible_example.switchA.eth[1].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 9 reproducible_example.switchA.eth[1].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 10 reproducible_example.switchA.eth[1].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 11 reproducible_example.switchA.eth[1].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 12 reproducible_example.switchA.eth[1].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 13 reproducible_example.switchA.eth[1].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 14 reproducible_example.switchA.eth[1].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 15 reproducible_example.switchA.eth[1].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 16 reproducible_example.switchA.eth[2].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 17 reproducible_example.switchA.eth[2].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 18 reproducible_example.switchA.eth[2].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 19 reproducible_example.switchA.eth[2].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 20 reproducible_example.switchA.eth[2].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 21 reproducible_example.switchA.eth[2].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 22 reproducible_example.switchA.eth[2].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 23 reproducible_example.switchA.eth[2].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 24 reproducible_example.switchA.eth[3].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 25 reproducible_example.switchA.eth[3].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 26 reproducible_example.switchA.eth[3].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 27 reproducible_example.switchA.eth[3].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 28 reproducible_example.switchA.eth[3].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 29 reproducible_example.switchA.eth[3].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 30 reproducible_example.switchA.eth[3].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 31 reproducible_example.switchA.eth[3].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 32 reproducible_example.switchB.eth[0].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 33 reproducible_example.switchB.eth[0].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 34 reproducible_example.switchB.eth[0].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 35 reproducible_example.switchB.eth[0].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 36 reproducible_example.switchB.eth[0].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 37 reproducible_example.switchB.eth[0].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 38 reproducible_example.switchB.eth[0].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 39 reproducible_example.switchB.eth[0].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 40 reproducible_example.switchB.eth[1].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 41 reproducible_example.switchB.eth[1].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 42 reproducible_example.switchB.eth[1].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 43 reproducible_example.switchB.eth[1].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 44 reproducible_example.switchB.eth[1].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 45 reproducible_example.switchB.eth[1].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 46 reproducible_example.switchB.eth[1].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 47 reproducible_example.switchB.eth[1].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 48 reproducible_example.switchB.eth[2].queue.queues[0] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 49 reproducible_example.switchB.eth[2].queue.queues[1] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 50 reproducible_example.switchB.eth[2].queue.queues[2] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 51 reproducible_example.switchB.eth[2].queue.queues[3] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 52 reproducible_example.switchB.eth[2].queue.queues[4] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 53 reproducible_example.switchB.eth[2].queue.queues[5] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 54 reproducible_example.switchB.eth[2].queue.queues[6] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 55 reproducible_example.switchB.eth[2].queue.queues[7] queueLength:vector ETV
+attr interpolationmode sample-hold
+attr title "queue length, vector"
+vector 56 reproducible_example.accessPoint2.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 57 reproducible_example.accessPoint2.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 58 reproducible_example.roboticArm.wlan[0].radio radioMode:vector ETV
+attr interpolationmode sample-hold
+attr source radioModeChanged
+attr title "Radio mode, vector"
+vector 59 reproducible_example.roboticArm.wlan[0].radio radioChannel:vector ETV
+attr interpolationmode sample-hold
+attr source radioChannelChanged
+attr title "Radio channel, vector"
+vector 60 reproducible_example.accessPoint2.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 61 reproducible_example.accessPoint2.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 62 reproducible_example.accessPoint2.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 63 reproducible_example.accessPoint2.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 64 reproducible_example.accessPoint2.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 65 reproducible_example.accessPoint2.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 66 reproducible_example.roboticArm.wlan[0].radio receptionState:vector ETV
+attr interpolationmode sample-hold
+attr source receptionStateChanged
+attr title "Radio reception state, vector"
+vector 67 reproducible_example.roboticArm.wlan[0].mac.dcf.channelAccess.contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 68 reproducible_example.roboticArm.wlan[0].mac.hcf.edca.edcaf[0].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 69 reproducible_example.roboticArm.wlan[0].mac.hcf.edca.edcaf[1].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 70 reproducible_example.roboticArm.wlan[0].mac.hcf.edca.edcaf[2].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 71 reproducible_example.roboticArm.wlan[0].mac.hcf.edca.edcaf[3].contention state:vector ETV
+attr interpolationmode none
+attr source stateChanged
+attr title "contention state, vector"
+vector 72 reproducible_example.robotController.trafGenSchedApp pktSentFlowId:vector ETV
+attr interpolationmode none
+attr source flowId(sentPk)
+attr title "packet sent with flow id, vector"
+vector 73 reproducible_example.robotController.trafGenSchedApp pktSentSeqNum:vector ETV
+attr interpolationmode none
+attr source seqNum(sentPk)
+attr title "packet sent with sequence number, vector"
+vector 74 reproducible_example.robotController.trafGenSchedApp pktSentTreeId:vector ETV
+attr interpolationmode none
+attr source sentPkTreeId
+attr title "packet sent with tree id, vector"
+vector 75 reproducible_example.robotController.eth.encap encapPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source encapPk
+attr title "packets encapsulated, vector(packetBytes)"
+vector 76 reproducible_example.robotController.eth.mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 77 reproducible_example.robotController.eth.mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 78 reproducible_example.switchA.eth[0].mac receivedExpressFrame:vector ETV
+attr interpolationmode none
+attr title "receivedExpressFrame, vector"
+vector 79 reproducible_example.switchA.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 80 reproducible_example.switchA.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 81 reproducible_example.switchA.processingDelay packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 82 reproducible_example.switchA.processingDelay delay:vector ETV
+attr interpolationmode none
+attr source delay
+attr title "packet delay, vector"
+vector 83 reproducible_example.switchA.processingDelay packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 84 reproducible_example.switchA.eth[3].queue.queues[7] rcvdPk:vector ETV
+attr interpolationmode none
+attr title "received packets, vector"
+vector 85 reproducible_example.switchA.eth[3].queue.queues[7] enqueuePk:vector ETV
+attr interpolationmode none
+vector 86 reproducible_example.switchA.eth[3].queue.queues[7] dequeuePk:vector ETV
+attr interpolationmode none
+vector 87 reproducible_example.switchA.eth[3].queue.queues[7] queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 88 reproducible_example.switchA.eth[3].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 89 reproducible_example.switchA.eth[3].mac eMacDelay:vector ETV
+attr interpolationmode none
+attr title "eMacDelay, vector"
+vector 90 reproducible_example.switchA.eth[3].mac startTxExpressFrames:vector ETV
+attr interpolationmode none
+attr source startTransmissionExpressFrameSignal
+attr title "startTxExpressFrames, vector"
+vector 91 reproducible_example.switchA.eth[3].mac txExpressFrame:vector ETV
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "txExpressFrame, vector"
+vector 92 reproducible_example.switchA.eth[3].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 93 reproducible_example.switchB.eth[2].mac receivedExpressFrame:vector ETV
+attr interpolationmode none
+attr title "receivedExpressFrame, vector"
+vector 94 reproducible_example.switchB.eth[2].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 95 reproducible_example.switchB.eth[2].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 96 reproducible_example.switchB.processingDelay packetReceived:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceived
+attr title "packets received, vector(packetBytes)"
+vector 97 reproducible_example.switchB.processingDelay delay:vector ETV
+attr interpolationmode none
+attr source delay
+attr title "packet delay, vector"
+vector 98 reproducible_example.switchB.processingDelay packetSent:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSent
+attr title "packets sent, vector(packetBytes)"
+vector 99 reproducible_example.switchB.eth[1].queue.queues[7] rcvdPk:vector ETV
+attr interpolationmode none
+attr title "received packets, vector"
+vector 100 reproducible_example.switchB.eth[1].queue.queues[7] enqueuePk:vector ETV
+attr interpolationmode none
+vector 101 reproducible_example.switchB.eth[1].queue.queues[7] dequeuePk:vector ETV
+attr interpolationmode none
+vector 102 reproducible_example.switchB.eth[1].queue.queues[7] queueingTime:vector ETV
+attr interpolationmode none
+attr title "queueing time, vector"
+vector 103 reproducible_example.switchB.eth[1].mac packetReceivedFromUpper:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packet bytes from higher layer, vector(packetBytes)"
+vector 104 reproducible_example.switchB.eth[1].mac eMacDelay:vector ETV
+attr interpolationmode none
+attr title "eMacDelay, vector"
+vector 105 reproducible_example.switchB.eth[1].mac startTxExpressFrames:vector ETV
+attr interpolationmode none
+attr source startTransmissionExpressFrameSignal
+attr title "startTxExpressFrames, vector"
+vector 106 reproducible_example.switchB.eth[1].mac txExpressFrame:vector ETV
+attr interpolationmode none
+attr source transmittedExpressFrameSignal
+attr title "txExpressFrame, vector"
+vector 107 reproducible_example.switchB.eth[1].mac txPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets transmitted, vector(packetBytes)"
+vector 108 reproducible_example.accessPoint2.eth[0].mac rxPkOk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source rxPkOk
+attr title "packets received OK, vector(packetBytes)"
+vector 109 reproducible_example.accessPoint2.eth[0].mac passedUpPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToUpper
+attr title "packets passed to higher layer, vector(packetBytes)"
+vector 110 reproducible_example.accessPoint2.wlan[0].mac rcvdPkFromHl:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetReceivedFromUpper
+attr title "packets received from higher layer, vector(packetBytes)"
+vector 111 reproducible_example.accessPoint2.wlan[0].mac sentDownPk:vector(packetBytes) ETV
+attr interpolationmode none
+attr source packetSentToLower
+attr title "packets sent to lower layer, vector(packetBytes)"
+vector 112 reproducible_example.accessPoint2.wlan[0].radio transmissionState:vector ETV
+attr interpolationmode sample-hold
+attr source transmissionStateChanged
+attr title "Radio transmission state, vector"
+0	0	0	0
+1	0	0	0
+2	0	0	0
+3	0	0	0
+4	0	0	0
+5	0	0	0
+6	0	0	0
+7	0	0	0
+8	0	0	0
+9	0	0	0
+10	0	0	0
+11	0	0	0
+12	0	0	0
+13	0	0	0
+14	0	0	0
+15	0	0	0
+16	0	0	0
+17	0	0	0
+18	0	0	0
+19	0	0	0
+20	0	0	0
+21	0	0	0
+22	0	0	0
+23	0	0	0
+24	0	0	0
+25	0	0	0
+26	0	0	0
+27	0	0	0
+28	0	0	0
+29	0	0	0
+30	0	0	0
+31	0	0	0
+31	31	0.000018172	1
+31	37	0.000018172	0
+32	0	0	0
+33	0	0	0
+34	0	0	0
+35	0	0	0
+36	0	0	0
+37	0	0	0
+38	0	0	0
+39	0	0	0
+40	0	0	0
+41	0	0	0
+42	0	0	0
+43	0	0	0
+44	0	0	0
+45	0	0	0
+46	0	0	0
+47	0	0	0
+47	52	0.000026344	1
+47	58	0.000026344	0
+48	0	0	0
+49	0	0	0
+50	0	0	0
+51	0	0	0
+52	0	0	0
+53	0	0	0
+54	0	0	0
+55	0	0	0
+56	0	0	0
+56	0	0	0
+56	0	0	2
+56	73	0.000097	3
+57	0	0	0
+58	0	0	0
+58	0	0	0
+58	0	0	2
+59	0	0	0
+60	0	0	1
+60	73	0.000097	0
+61	0	0	0
+61	0	0	0
+61	69	0.000029516	0
+61	69	0.000029516	2
+61	70	0.000097	2
+61	70	0.000097	0
+61	73	0.000097	0
+61	73	0.000097	0
+62	0	0	0
+62	0	0	0
+62	73	0.000097	0
+62	73	0.000097	0
+63	0	0	0
+63	0	0	0
+63	73	0.000097	0
+63	73	0.000097	0
+64	0	0	0
+64	0	0	0
+64	73	0.000097	0
+64	73	0.000097	0
+65	0	0	0
+65	0	0	0
+65	73	0.000097	0
+65	73	0.000097	0
+66	0	0	1
+67	0	0	0
+67	0	0	0
+68	0	0	0
+68	0	0	0
+69	0	0	0
+69	0	0	0
+70	0	0	0
+70	0	0	0
+71	0	0	0
+71	0	0	0
+72	18	0.00001	1
+73	18	0.00001	0
+74	18	0.00001	536
+75	19	0.00001	354
+76	21	0.00001	376
+77	22	0.000013072	376
+78	24	0.000013172	536
+79	24	0.000013172	376
+80	24	0.000013172	376
+81	27	0.000013172	376
+82	27	0.000013172	5e-06
+83	28	0.000018172	376
+84	31	0.000018172	536
+85	31	0.000018172	536
+86	37	0.000018172	536
+87	37	0.000018172	0
+88	41	0.000018172	376
+89	41	0.000018172	1.8172e-05
+90	41	0.000018172	536
+91	42	0.000021244	536
+92	42	0.000021244	376
+93	45	0.000021344	536
+94	45	0.000021344	376
+95	45	0.000021344	376
+96	48	0.000021344	376
+97	48	0.000021344	5e-06
+98	49	0.000026344	376
+99	52	0.000026344	536
+100	52	0.000026344	536
+101	58	0.000026344	536
+102	58	0.000026344	0
+103	62	0.000026344	376
+104	62	0.000026344	2.6344e-05
+105	62	0.000026344	536
+106	63	0.000029416	536
+107	63	0.000029416	376
+108	66	0.000029516	376
+109	66	0.000029516	376
+110	69	0.000029516	362
+111	72	0.000097	390
+112	73	0.000097	1
+112	74	0.000097	2
+31	109	0.000418172	1
+31	115	0.000418172	0
+31	180	0.000818172	1
+31	186	0.000818172	0
+47	130	0.000426344	1
+47	136	0.000426344	0
+47	201	0.000826344	1
+47	207	0.000826344	0
+56	77	0.000157	2
+56	84	0.000332	3
+56	88	0.000392	2
+56	153	0.000657	3
+56	157	0.000717	2
+56	222	0.001	3
+60	77	0.000157	1
+60	84	0.000332	0
+60	88	0.000392	1
+60	153	0.000657	0
+60	157	0.000717	1
+60	222	0.001	0
+61	79	0.000215	0
+61	79	0.000215	1
+61	80	0.000217	1
+61	80	0.000217	2
+61	81	0.000332	2
+61	81	0.000332	0
+61	84	0.000332	0
+61	84	0.000332	0
+61	148	0.00045	0
+61	148	0.00045	1
+61	149	0.000452	1
+61	149	0.000452	2
+61	150	0.000657	2
+61	150	0.000657	0
+61	153	0.000657	0
+61	153	0.000657	0
+61	159	0.000775	0
+61	159	0.000775	1
+61	160	0.000777	1
+61	160	0.000777	2
+61	219	0.001	2
+61	219	0.001	0
+61	222	0.001	0
+61	222	0.001	0
+62	80	0.000217	0
+62	80	0.000217	0
+62	84	0.000332	0
+62	84	0.000332	0
+62	149	0.000452	0
+62	149	0.000452	0
+62	153	0.000657	0
+62	153	0.000657	0
+62	160	0.000777	0
+62	160	0.000777	0
+62	222	0.001	0
+62	222	0.001	0
+63	80	0.000217	0
+63	80	0.000217	0
+63	84	0.000332	0
+63	84	0.000332	0
+63	149	0.000452	0
+63	149	0.000452	0
+63	153	0.000657	0
+63	153	0.000657	0
+63	160	0.000777	0
+63	160	0.000777	0
+63	222	0.001	0
+63	222	0.001	0
+64	80	0.000217	0
+64	80	0.000217	0
+64	84	0.000332	0
+64	84	0.000332	0
+64	149	0.000452	0
+64	149	0.000452	0
+64	153	0.000657	0
+64	153	0.000657	0
+64	160	0.000777	0
+64	160	0.000777	0
+64	222	0.001	0
+64	222	0.001	0
+65	80	0.000217	0
+65	80	0.000217	0
+65	84	0.000332	0
+65	84	0.000332	0
+65	149	0.000452	0
+65	149	0.000452	0
+65	153	0.000657	0
+65	153	0.000657	0
+65	160	0.000777	0
+65	160	0.000777	0
+65	222	0.001	0
+65	222	0.001	0
+72	96	0.00041	1
+72	167	0.00081	1
+73	96	0.00041	1
+73	167	0.00081	2
+74	96	0.00041	601
+74	167	0.00081	654
+75	97	0.00041	354
+75	168	0.00081	354
+76	99	0.00041	376
+76	170	0.00081	376
+77	100	0.000413072	376
+77	171	0.000813072	376
+78	102	0.000413172	601
+78	173	0.000813172	654
+79	102	0.000413172	376
+79	173	0.000813172	376
+80	102	0.000413172	376
+80	173	0.000813172	376
+81	105	0.000413172	376
+81	176	0.000813172	376
+82	105	0.000413172	5e-06
+82	176	0.000813172	5e-06
+83	106	0.000418172	376
+83	177	0.000818172	376
+84	109	0.000418172	601
+84	180	0.000818172	654
+85	109	0.000418172	601
+85	180	0.000818172	654
+86	115	0.000418172	601
+86	186	0.000818172	654
+87	115	0.000418172	0
+87	186	0.000818172	0
+88	119	0.000418172	376
+88	190	0.000818172	376
+89	119	0.000418172	0.000418172
+89	190	0.000818172	0.000818172
+90	119	0.000418172	601
+90	190	0.000818172	654
+91	120	0.000421244	601
+91	191	0.000821244	654
+92	120	0.000421244	376
+92	191	0.000821244	376
+93	123	0.000421344	601
+93	194	0.000821344	654
+94	123	0.000421344	376
+94	194	0.000821344	376
+95	123	0.000421344	376
+95	194	0.000821344	376
+96	126	0.000421344	376
+96	197	0.000821344	376
+97	126	0.000421344	5e-06
+97	197	0.000821344	5e-06
+98	127	0.000426344	376
+98	198	0.000826344	376
+99	130	0.000426344	601
+99	201	0.000826344	654
+100	130	0.000426344	601
+100	201	0.000826344	654
+101	136	0.000426344	601
+101	207	0.000826344	654
+102	136	0.000426344	0
+102	207	0.000826344	0
+103	140	0.000426344	376
+103	211	0.000826344	376
+104	140	0.000426344	0.000426344
+104	211	0.000826344	0.000826344
+105	140	0.000426344	601
+105	211	0.000826344	654
+106	141	0.000429416	601
+106	212	0.000829416	654
+107	141	0.000429416	376
+107	212	0.000829416	376
+108	144	0.000429516	376
+108	215	0.000829516	376
+109	144	0.000429516	376
+109	215	0.000829516	376
+110	147	0.000429516	362
+110	218	0.000829516	362
+111	83	0.000332	390
+111	152	0.000657	390
+111	221	0.001	390
+112	76	0.000157	1
+112	77	0.000157	0
+112	84	0.000332	1
+112	85	0.000332	2
+112	87	0.000392	1
+112	88	0.000392	0
+112	153	0.000657	1
+112	154	0.000657	2
+112	156	0.000717	1
+112	157	0.000717	0
+112	222	0.001	1
+112	223	0.001	2
+31	249	0.001218172	1
+31	255	0.001218172	0
+31	307	0.001618172	1
+31	313	0.001618172	0
+47	270	0.001226344	1
+47	276	0.001226344	0
+47	328	0.001626344	1
+47	334	0.001626344	0
+56	226	0.00106	2
+60	226	0.00106	1
+61	228	0.001118	0
+61	228	0.001118	1
+61	229	0.00112	1
+61	229	0.00112	2
+62	229	0.00112	0
+62	229	0.00112	0
+63	229	0.00112	0
+63	229	0.00112	0
+64	229	0.00112	0
+64	229	0.00112	0
+65	229	0.00112	0
+65	229	0.00112	0
+72	236	0.00121	1
+72	294	0.00161	1
+73	236	0.00121	3
+73	294	0.00161	4
+74	236	0.00121	707
+74	294	0.00161	748
+75	237	0.00121	354
+75	295	0.00161	354
+76	239	0.00121	376
+76	297	0.00161	376
+77	240	0.001213072	376
+77	298	0.001613072	376
+78	242	0.001213172	707
+78	300	0.001613172	748
+79	242	0.001213172	376
+79	300	0.001613172	376
+80	242	0.001213172	376
+80	300	0.001613172	376
+81	245	0.001213172	376
+81	303	0.001613172	376
+82	245	0.001213172	5e-06
+82	303	0.001613172	5e-06
+83	246	0.001218172	376
+83	304	0.001618172	376
+84	249	0.001218172	707
+84	307	0.001618172	748
+85	249	0.001218172	707
+85	307	0.001618172	748
+86	255	0.001218172	707
+86	313	0.001618172	748
+87	255	0.001218172	0
+87	313	0.001618172	0
+88	259	0.001218172	376
+88	317	0.001618172	376
+89	259	0.001218172	0.001218172
+89	317	0.001618172	0.001618172
+90	259	0.001218172	707
+90	317	0.001618172	748
+91	260	0.001221244	707
+91	318	0.001621244	748
+92	260	0.001221244	376
+92	318	0.001621244	376
+93	263	0.001221344	707
+93	321	0.001621344	748
+94	263	0.001221344	376
+94	321	0.001621344	376
+95	263	0.001221344	376
+95	321	0.001621344	376
+96	266	0.001221344	376
+96	324	0.001621344	376
+97	266	0.001221344	5e-06
+97	324	0.001621344	5e-06
+98	267	0.001226344	376
+98	325	0.001626344	376
+99	270	0.001226344	707
+99	328	0.001626344	748
+100	270	0.001226344	707
+100	328	0.001626344	748
+101	276	0.001226344	707
+101	334	0.001626344	748
+102	276	0.001226344	0
+102	334	0.001626344	0
+103	280	0.001226344	376
+103	338	0.001626344	376
+104	280	0.001226344	0.001226344
+104	338	0.001626344	0.001626344
+105	280	0.001226344	707
+105	338	0.001626344	748
+106	281	0.001229416	707
+107	281	0.001229416	376
+108	284	0.001229516	376
+109	284	0.001229516	376
+110	287	0.001229516	362
+112	225	0.00106	1
+112	226	0.00106	0
+
