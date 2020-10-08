@@ -25,7 +25,7 @@ The current version of the NeSTiNg simulation framework has been tested with OMN
 + Clone this repository, i.e.
 
 ```
-  $ git clone https://gitlab.com/ipvs/nesting.git
+we
 ```
 
 + Download and unpack INET version 4.1.2 or clone the INET repository and checkout tag `v4.1.2`, i.e.
