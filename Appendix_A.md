@@ -24,13 +24,13 @@ The install procedure was replicated to match the steps highlighted therein.
 
 In the development phase, the main files used were as follows:
 
-    +	`VlanEtherHostQ.ned`, whose file path is: `my_project_workspace/nesting2/src/nesting/node/ethernet/VlanEtherHostQ.ned`
-    +	`01_example_strict_priority.ini`, `TestScenario.ned`, all in the same directory, whose file path is: `my_project_workspace/nesting2/simulations/examples/`
-    +	`TestScenarioRouting.xml`, whose file path is: `my_project_workspace/nesting2/simulations/examples/xml/TestScenarioRouting.xml`
++	`VlanEtherHostQ.ned`, whose file path is: `my_project_workspace/nesting2/src/nesting/node/ethernet/VlanEtherHostQ.ned`
++	`01_example_strict_priority.ini`, `TestScenario.ned`, all in the same directory, whose file path is: `my_project_workspace/nesting2/simulations/examples/`
++	`TestScenarioRouting.xml`, whose file path is: `my_project_workspace/nesting2/simulations/examples/xml/TestScenarioRouting.xml`
 Other files were created and used for testing purposes:
-    +	`Tester.ned`, `tester.ini`, `reproducible_example.ned`, `minimal_reproducible_example.ini`, all in the same directory as the above: `my_project_workspace/nesting2/simulations/examples/`
++	`Tester.ned`, `tester.ini`, `reproducible_example.ned`, `minimal_reproducible_example.ini`, all in the same directory as the above: `my_project_workspace/nesting2/simulations/examples/`
 Other main files reviewed which were required for understanding are:
-    +	`02_example_gating.ini`, `03_example_frame_preemption.ini`, on the path: `my_project_workspace/nesting2/simulations/examples/`
++	`02_example_gating.ini`, `03_example_frame_preemption.ini`, on the path: `my_project_workspace/nesting2/simulations/examples/`
 The system further produced results folders to hold the result files generated from the various tests and simulations. These folders are easily differentiated because they are named after the specific simulation they describe. They lie on the path: `my_project_workspace/nesting2/simulations/examples/<results_folder>`
 Upon building and running the programs developed in the simulator, there were more errors encountered:
 1)	No such file or directory
