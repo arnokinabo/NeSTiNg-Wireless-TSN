@@ -62,8 +62,9 @@ e.	The exact message is: `STA is not associated with an access point`, in the co
 Reason: In the case of this work, it was missing the definition of the host’s management access point address, which is the same as the associated access point’s mac address (defined without the need for keyword “mac”). This may be defined for the STA as `wlan[*].mgmt.accessPointAddress`. But if the wireless interface definition is incomplete then it will be of no use. So, the full definition of wlan must be defined, as in the next point.
 
 f.	For a complete definition of the wireless interface of a custom host or node, say Ieee80211Interface, one needs to indicate first in the gates input, the number of radios. This same number must be defined in the wireless interface section, as pointed out in: https://stackoverflow.com/questions/36615266/how-can-i-combine-my-customize-module-with-omnetinets-simple-module
+
 Example:
-`wlan[1]: <default("Ieee80211Interface")> like IWirelessInterface {,,,,,,,}`, means one wireless interface of the type Ieee80211Interface.
+`wlan[1]: <default("Ieee80211Interface")> like IWirelessInterface {,,,,,,,}`, means one wireless interface of the type "Ieee80211Interface".
 Again, this has to be stated in the connections section, but this time the number represents the index or number of the interface in use. For the case above, one interface means starting at zero: wlan[0].
 
 g.	Runtime error: `Implicit chunk serialization is disabled to prevent unpredictable performance degradation (you may consider changing the Chunk::enableImplicitChunkSerialization flag or passing the PF_ALLOW_SERIALIZATION flag to peek) -- in module (inet::visualizer::MediumCanvasVisualizer)`
