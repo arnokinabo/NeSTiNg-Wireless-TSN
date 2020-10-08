@@ -15,8 +15,6 @@ MSc, University of Cape Town
 + Council for Scientific and Industrial Research (CSIR), South Africa
 + [Mail](albert.lysko@csir.co.za)
 
-The rest of the text from this point is as you would be :
-
 
 ## Compatibility
 
