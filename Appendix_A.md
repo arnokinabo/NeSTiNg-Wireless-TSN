@@ -7,7 +7,8 @@ The procedure for installing OMNeT, virtualization and other tools for the exper
 2)	An ISO image of the latest LTS (Long-Term Support) Ubuntu OS version at the time (Ubuntu 18.04 – Bionic Beaver) was obtained from the Ubuntu official site
 3)	A virtual machine was created using the ISO. Detailed steps can be found on the VirtualBox site
 4)	Additional settings were configured once the VM was up and running. These are known as VirtualBox Guest Additions.
-They are a collection of device drivers and system applications that aid the user to have a better experience while working in a virtualised environment. Although similar settings come with the Ubuntu (or other OS) ISO image, usually the repository is outdated and so they do not fit so well with the current VM settings. These VirtualBox Guest Additions ship with the Oracle VirtualBox software, and their install procedure is detailed quite clearly here [70]. 
+They are a collection of device drivers and system applications that aid the user to have a better experience while working in a virtualised environment. Although similar settings come with the Ubuntu (or other OS) ISO image, usually the repository is outdated and so they do not fit so well with the current VM settings. These VirtualBox Guest Additions ship with the Oracle VirtualBox software, and their install procedure is detailed quite clearly here [70].
+
 The guest additions help with a number of things:
 -	Easy mouse pointer integration
 -	Shared clipboard for copying and pasting things both ways between the guest and host systems
