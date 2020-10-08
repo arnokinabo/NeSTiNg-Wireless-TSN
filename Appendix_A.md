@@ -28,6 +28,7 @@ Even though OMNeT provides a prompt for downloading the INET library upon its fi
 
 The install procedure was replicated to match the steps highlighted therein.
 
+### Files
 In the development phase, the main files used were as follows:
 
 -	`VlanEtherHostQ.ned`, whose file path is: `my_project_workspace/nesting2/src/nesting/node/ethernet/VlanEtherHostQ.ned`
