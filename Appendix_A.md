@@ -2,7 +2,7 @@
 
 The procedure for installing OMNeT, virtualization and other tools for the experiment relevant to Section 4 is detailed here. This section also documents a list of the errors encountered during the installation and development phases, and how they were resolved.
 
-Install procedure:
+## Install procedure:
 1)	On the Windows machine, the Oracle VM VirtualBox Manager was downloaded and installed.
 2)	An ISO image of the latest LTS (Long-Term Support) Ubuntu OS version at the time (Ubuntu 18.04 – Bionic Beaver) was obtained from the Ubuntu official site
 3)	A virtual machine was created using the ISO. Detailed steps can be found on the VirtualBox site
@@ -24,14 +24,18 @@ The install procedure was replicated to match the steps highlighted therein.
 
 In the development phase, the main files used were as follows:
 
-+	`VlanEtherHostQ.ned`, whose file path is: `my_project_workspace/nesting2/src/nesting/node/ethernet/VlanEtherHostQ.ned`
-+	`01_example_strict_priority.ini`, `TestScenario.ned`, all in the same directory, whose file path is: `my_project_workspace/nesting2/simulations/examples/`
-+	`TestScenarioRouting.xml`, whose file path is: `my_project_workspace/nesting2/simulations/examples/xml/TestScenarioRouting.xml`
+-	`VlanEtherHostQ.ned`, whose file path is: `my_project_workspace/nesting2/src/nesting/node/ethernet/VlanEtherHostQ.ned`
+-	`01_example_strict_priority.ini`, `TestScenario.ned`, all in the same directory, whose file path is: `my_project_workspace/nesting2/simulations/examples/`
+-	`TestScenarioRouting.xml`, whose file path is: `my_project_workspace/nesting2/simulations/examples/xml/TestScenarioRouting.xml`
+
 Other files were created and used for testing purposes:
-+	`Tester.ned`, `tester.ini`, `reproducible_example.ned`, `minimal_reproducible_example.ini`, all in the same directory as the above: `my_project_workspace/nesting2/simulations/examples/`
+-	`Tester.ned`, `tester.ini`, `reproducible_example.ned`, `minimal_reproducible_example.ini`, all in the same directory as the above: `my_project_workspace/nesting2/simulations/examples/`
+
 Other main files reviewed which were required for understanding are:
-+	`02_example_gating.ini`, `03_example_frame_preemption.ini`, on the path: `my_project_workspace/nesting2/simulations/examples/`
+-	`02_example_gating.ini`, `03_example_frame_preemption.ini`, on the path: `my_project_workspace/nesting2/simulations/examples/`
 The system further produced results folders to hold the result files generated from the various tests and simulations. These folders are easily differentiated because they are named after the specific simulation they describe. They lie on the path: `my_project_workspace/nesting2/simulations/examples/<results_folder>`
+
+### Errors in Development
 Upon building and running the programs developed in the simulator, there were more errors encountered:
 1)	No such file or directory
 When running one of the example simulations, this error kept popping up. The writer noted that it was picking only the first word of the project workspace folder’s name. It stopped at the first delimiter (space). It was resolved by changing the folder name from “my project workspace” to “my_project_workspace”. The simulations could run after this.
