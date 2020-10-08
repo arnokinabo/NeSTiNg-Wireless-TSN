@@ -9,7 +9,7 @@ The procedure for installing OMNeT, virtualization and other tools for the exper
 4)	Additional settings were configured once the VM was up and running. These are known as VirtualBox Guest Additions.
 They are a collection of device drivers and system applications that aid the user to have a better experience while working in a virtualised environment. Although similar settings come with the Ubuntu (or other OS) ISO image, usually the repository is outdated and so they do not fit so well with the current VM settings. These VirtualBox Guest Additions ship with the Oracle VirtualBox software, and their install procedure is detailed quite clearly here [70].
 
-The guest additions help with a number of things:
+The guest additions help with a number of things [70]:
 -	Easy mouse pointer integration
 -	Shared clipboard for copying and pasting things both ways between the guest and host systems
 -	Drag and drop feature which also works bidirectionally between the guest and host
@@ -18,9 +18,11 @@ The guest additions help with a number of things:
 5)	Next came the task to install the foundation for the simulation environment.
 
 As highlighted in Fig 7, OMNeT++ was first on the list. The prescribed OMNeT version was chosen going off the instructions of the Distributed Systems group of IPVS. Detailed instructions on its installation can be found in its (OMNeT) documentation [54]. Although sometimes these steps do not go according to plan majorly because of unmatched program dependencies, a fact usually stemming from outdated programs in the Ubuntu repository which leads to missing prerequisite programs. Secondary assistance came through a source found here [71]
+
 6)	The INET version chosen by the Distributed Systems group was used to run its installation.
 
 Even though OMNeT provides a prompt for downloading the INET library upon its first-time use, sometimes it has to be installed manually, which was the case in this project. Instructions from the INET installation page on its home site help with this [57].
+
 7)	Even after successful installation there may be further errors encountered when launching the OMNeT IDE, prompting the user to check the logs files. It was revealed in [72] that “OMNeT++ 5.4.1 is based on Eclipse 4.7.3 and The java 11 broke the compatibility with Eclipse 4.7 which in turn causes the issue with OMNeT++ 5.4.1.” The author tried his second workaround for the problem and solution described, and found it cleared the error immediately.
 8)	The rest of the procedure for installing NeSTiNg itself is as documented in [56].
 
