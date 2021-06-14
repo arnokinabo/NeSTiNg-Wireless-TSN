@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+<schedules>
+	<defaultcycle>50us</defaultcycle>
+	<host name="robotController">
+		<cycle>50us</cycle>
+		<entry>
+			<start>10us</start>
+			<queue>7</queue>
+			<dest>00:00:00:00:00:04</dest>
+			<size>1400B</size>
+			<flowId>1</flowId>
+		</entry>
+	</host>
+</schedules>

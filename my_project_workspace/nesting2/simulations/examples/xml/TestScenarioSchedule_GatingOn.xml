@@ -26,7 +26,7 @@
 		</port>
 	</switch>
 	<switch name="switchB">
-		<port id="1">
+		<port id="0">
 			<schedule cycleTime="400us">
 				<entry>
 					<length>200us</length>

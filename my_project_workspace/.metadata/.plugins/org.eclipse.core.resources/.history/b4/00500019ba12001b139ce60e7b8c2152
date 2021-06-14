@@ -1,0 +1,33 @@
+[Config Wireless01]
+description = Two hosts communicating wirelessly
+network = Tester
+sim-time-limit = 20s
+
+*.host*.ipv4.arp.typename = "GlobalArp"
+
+**.displayAddresses = true
+**.verbose = true
+
+*.hostA.numApps = 1
+*.hostA.app[0].typename = "UdpBasicApp"
+*.hostA.app[0].destAddresses = "hostB"
+*.hostA.app[0].destPort = 5000
+*.hostA.app[0].messageLength = 1000B
+*.hostA.app[0].sendInterval = exponential(12ms)
+*.hostA.app[0].packetName = "UDPData"
+
+*.hostB.numApps = 1
+*.hostB.app[0].typename = "UdpSink"
+*.hostB.app[0].localPort = 5000
+
+*.host*.wlan[0].typename = "AckingWirelessInterface"
+*.host*.wlan[0].mac.useAck = false
+*.host*.wlan[0].mac.fullDuplex = false
+#*.host*.wlan[0].radio.transmitter.communicationRange = 500m # only for unit disk radio
+*.host*.wlan[0].radio.receiver.ignoreInterference = true
+*.host*.wlan[0].mac.headerLength = 23B
+
+*.host*.**.bitrate = 1Mbps
+
+# extra lines needed for scalar radio:
+**.radio.typename = "Ieee80211ScalarRadio"

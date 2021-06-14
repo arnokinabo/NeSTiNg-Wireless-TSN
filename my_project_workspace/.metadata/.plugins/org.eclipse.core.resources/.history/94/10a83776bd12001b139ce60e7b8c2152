@@ -1,0 +1,100 @@
+[General]
+network = reproducible_example
+
+record-eventlog = false 
+debug-on-errors = true
+result-dir = results_reproducible_example
+sim-time-limit = 1s
+
+# debug
+**.displayAddresses = true
+**.verbose = true
+
+# MAC Addresses
+**.robotController.eth.address = "00-00-00-00-00-01"
+**.roboticArm.wlan[*].address = "00-00-00-00-00-04"
+
+# Extra definitions for the wireless portion:
+# access point configuration
+**.accessPoint2.wlan[0].address = "00-00-00-00-00-07"
+
+# robotic arm and backup server are associated with AP2
+**.roboticArm.wlan[0].mgmt.accessPointAddress = "00-00-00-00-00-07"
+
+# use simplified ieee802.11 management (no association, authentication etc.)
+**.roboticArm.wlan[*].mgmt.typename = "Ieee80211MgmtStaSimplified"
+**.accessPoint*.wlan[*].mgmt.typename = "Ieee80211MgmtApSimplified"
+
+# Switches
+**.switch*.processingDelay.delay = 5us
+**.filteringDatabase.database = xmldoc("xml/TestScenarioRouting.xml", "/filteringDatabases/")
+
+**.switchA.eth[3].queue.gateController.initialSchedule = xmldoc("xml/TestScenarioSchedule_AllOpen.xml", "/schedules/switch[@name='switchA']/port[@id='3']/schedule")
+**.switchB.eth[1].queue.gateController.initialSchedule = xmldoc("xml/TestScenarioSchedule_AllOpen.xml", "/schedules/switch[@name='switchB']/port[@id='1']/schedule")
+**.switch*.eth[*].queue.gateController.enableHoldAndRelease = false
+**.switch*.eth[*].queue.numberOfQueues = 8
+**.switch*.eth[*].queue.tsAlgorithms[0].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[1].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[2].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[3].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[4].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[5].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[6].typename = "StrictPriority"
+**.switch*.eth[*].queue.tsAlgorithms[7].typename = "StrictPriority"
+**.switch*.eth[*].queue.queues[0].expressQueue = true
+**.switch*.eth[*].queue.queues[1].expressQueue = true
+**.switch*.eth[*].queue.queues[2].expressQueue = true
+**.switch*.eth[*].queue.queues[3].expressQueue = true
+**.switch*.eth[*].queue.queues[4].expressQueue = true
+**.switch*.eth[*].queue.queues[5].expressQueue = true
+**.switch*.eth[*].queue.queues[6].expressQueue = true
+**.switch*.eth[*].queue.queues[7].expressQueue = true
+
+**.queues[*].bufferCapacity = 363360b
+
+**.switchA.eth[3].mac.enablePreemptingFrames = false
+
+# Schedule/Routing Swap
+#**.scheduleSwap.schedule = xmldoc("xml/TestScenarioScheduleSwap.xml")
+
+# Robot Controller
+**.robotController.trafGenSchedApp.initialSchedule = xmldoc("xml/TestScenarioSchedule_AllOpen.xml")
+
+# Robotic Arms
+**.roboticArm.trafGenApp.numPacketsPerBurst = 0
+**.roboticArm.trafGenApp.sendInterval = 1ms
+**.roboticArm.trafGenApp.packetLength = 100B
+
+# Extra bits for the wireless portion:
+
+# Wireless Medium
+**.mgmt.frameCapacity = 10
+**.mgmt.numChannels = 2
+**.wlan[*].mac.retryLimit = 7
+**.wlan[*].mac.dcf.channelAccess.cwMin = 7
+**.wlan[*].mac.cwMinBroadcast = 31
+
+**.bandName = "5 GHz (20 MHz)"
+**.opMode = "ac"
+**.wlan[*].radio.antenna.numAntennas = 8 #maximum number of streams for 802.11ac is 8
+**.bitrate = 1Gbps
+
+**.radio.typename = "Ieee80211ScalarRadio"
+
+**.wlan[*].radio.transmitter.power = 2mW
+**.wlan[*].radio.transmitter.headerBitLength = 100b
+**.carrierFrequency = 5GHz
+**.wlan[*].radio.receiver.sensitivity = -85dBm
+**.wlan[*].radio.receiver.snirThreshold = 4dB
+
+# Modelling interference and communication
+**.radioMedium.analogModel.ignorePartialInterference = true
+**.accessPoint*.wlan[*].radio.receiver.ignoreInterference = true
+**.roboticArm.wlan[*].radio.receiver.ignoreInterference = true
+**.wlan[*].radio.transmitter.communicationRange = 200m  # only for unit disk radio
+**.wlan[*].radio.displayCommunicationRange = true
+
+# Visualisation definitions to support animations to show what's going on
+#**.visualizer.mediumVisualizer.displaySignals = true
+#**.visualizer.physicalLinkVisualizer.displayLinks = true
+**.visualizer.mediumVisualizer.packetFilter = "" #take care to deal with this line if need be

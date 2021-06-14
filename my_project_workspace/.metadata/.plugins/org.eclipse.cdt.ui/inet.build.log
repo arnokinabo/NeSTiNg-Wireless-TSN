@@ -1,4 +1,4 @@
-16:55:08 **** Incremental Build of configuration release for project inet ****
+12:43:33 **** Incremental Build of configuration release for project inet ****
 make MODE=release -j1 all 
 cd src && make
 make[1]: Entering directory '/home/arno/omnetpp-5.4.1/my_project_workspace/inet/src'
@@ -10,5 +10,5 @@ Building...
 make[1]: Nothing to be done for 'all-pch'.
 make[1]: Leaving directory '/home/arno/omnetpp-5.4.1/my_project_workspace/inet/src'
 
-16:55:13 Build Finished (took 5s.527ms)
+12:43:38 Build Finished (took 4s.167ms)
 

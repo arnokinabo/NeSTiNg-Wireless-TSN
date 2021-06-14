@@ -1,4 +1,4 @@
-17:36:33 **** Incremental Build of configuration gcc-release for project nesting2 ****
+12:43:39 **** Incremental Build of configuration gcc-release for project nesting2 ****
 make MODE=release -j1 all 
 cd src && make
 make[1]: Entering directory '/home/arno/omnetpp-5.4.1/my_project_workspace/nesting2/src'
@@ -9,5 +9,5 @@ make[1]: Entering directory '/home/arno/omnetpp-5.4.1/my_project_workspace/nesti
 make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/arno/omnetpp-5.4.1/my_project_workspace/nesting2/simulations'
 
-17:36:34 Build Finished (took 1s.215ms)
+12:43:40 Build Finished (took 847ms)
 

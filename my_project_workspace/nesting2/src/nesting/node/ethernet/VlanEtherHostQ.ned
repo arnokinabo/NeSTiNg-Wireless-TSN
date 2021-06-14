@@ -15,14 +15,11 @@
 
 package nesting.node.ethernet;
 
-//import inet.linklayer.contract.IEthernetInterface;
+import inet.linklayer.contract.IEthernetInterface;
 import inet.networklayer.common.InterfaceTable;
 import nesting.application.ethernet.VlanEtherTrafGen;
 import nesting.common.time.IClock;
 import nesting.common.time.IOscillator;
-// my extra wireless packages:
-import inet.linklayer.contract.IWirelessInterface;
-import inet.mobility.contract.IMobility;
 
 
 //
@@ -42,16 +39,8 @@ module VlanEtherHostQ
         **.clockModule = default(absPath(".legacyClock"));
         **.oscillatorModule = default(absPath(".oscillator"));
         **.interfaceTableModule = default(absPath(".interfaceTable"));
-        
-        // extra wireless parameters:
-        string energySourceModule = default("");
-        **.energySourceModule = default(absPath(energySourceModule));
-        string mobilityType = default("");
-        **.mobilityModule = default(absPath(".mobility"));
-        
     gates:
-        //inout ethg @labels(EtherFrame-conn);
-        input radioIn[1] @directIn; // extra wireless line
+        inout ethg @labels(EtherFrame-conn);
     submodules:
         trafGenApp: VlanEtherTrafGen {
             @display("p=232,70");
@@ -62,34 +51,19 @@ module VlanEtherHostQ
         legacyClock: <default("LegacyClock")> like IClock {
             @display("p=53,39;is=s");
         }
-        //eth: <default("EthernetInterface")> like IEthernetInterface {
-        wlan[1]: <default("Ieee80211Interface")> like IWirelessInterface {
-        //Another option: "WirelessInterface", but then you have to specify
-        //parameters like 'mib' if you use "Ieee80211Mac" instead of, say, "CsmaCaMac"
-            
+        eth: <default("EthernetInterface")> like IEthernetInterface {
             parameters:
                 @display("p=232,283,row,150;q=txQueue");
                 encap.typename = "EtherEncap";
                 qEncap.typename = "EnhancedIeee8021qEncap";
-                
-                //mac.typename = "EtherMacFullDuplex";
-                
-                mac.typename = "Ieee80211Mac";  // Another option: "CsmaCaMac",
+                mac.typename = "EtherMacFullDuplex";
                 mac.mtu = 1500B;
-                // extra wireless parameters:
-                //radio.typename = "Ieee80211Radio";
         }
         interfaceTable: InterfaceTable {
             @display("p=53,164;is=s");
         }
-        mobility: <default("StationaryMobility")> like IMobility {
-        	@display("p=53,200");
-        }
-    //connections:
-    connections allowunconnected:
-        radioIn[0] --> wlan[0].radioIn;
-        wlan[0].upperLayerOut --> trafGenApp.in;
-        wlan[0].upperLayerIn <-- trafGenApp.out;
-        //eth.phys <--> ethg;
-        
+    connections:
+        eth.upperLayerIn <-- trafGenApp.out;
+        eth.upperLayerOut --> trafGenApp.in;
+        eth.phys <--> ethg;
 }

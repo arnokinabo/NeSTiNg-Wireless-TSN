@@ -23,18 +23,23 @@ network Tester
 
     submodules:
         visualizer: <default("IntegratedCanvasVisualizer")> like IIntegratedVisualizer if hasVisualizer() {
-            @display("p=580,125");
+            parameters:
+                @display("p=580,125");
         }
         configurator: Ipv4NetworkConfigurator {
             @display("p=580,200");
         }
-        radioMedium: <default("UnitDiskRadioMedium")> like IRadioMedium {
-            @display("p=580,275");
+        radioMedium: <default("Ieee80211ScalarRadioMedium")> like IRadioMedium {
+            @display("p=446,100");
         }
         hostA: <default("WirelessHost")> like INetworkNode {
             @display("p=50,325");
         }
         hostB: <default("WirelessHost")> like INetworkNode {
             @display("p=450,325");
+        }
+        accessPoint2: AccessPoint {
+            parameters:
+                @display("p=250,150");
         }
 }

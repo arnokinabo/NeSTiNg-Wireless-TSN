@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;nesting2/simulations/examples/results_wifi_strict_priority/General.anf&apos;" deleteContents="false" description="Delete resource &apos;nesting2/simulations/examples/results_wifi_strict_priority/General.anf&apos;" element1="/nesting2/simulations/examples/results_wifi_strict_priority/General.anf" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1613647110371"/>
+</session>
